@@ -1,0 +1,60 @@
+.btn {
+  display: inline-flex;
+  padding: 9px 54px;
+  //height: 45px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: $semi-bold;
+  line-height: 25px;
+  letter-spacing: 1.6px;
+  font-family: $font-btn;
+  text-transform: capitalize;
+  border: 1px solid $bright;
+  border-radius: 23px;
+  @include transition();
+  @include appearance();
+  text-decoration: none;
+
+  a {
+    color: inherit !important;
+    text-decoration: inherit !important;
+  }
+
+
+  &:hover, &:active, &:not(:disabled):not(.disabled):active {
+    outline: 0;
+    cursor: pointer;
+
+  }
+}
+
+.btn--primary, .btn--outline, .btn--primary:visited .btn--outline:visited {
+  background-color: $lightest;
+  color: $bright;
+
+  &:hover, &:active, &:not(:disabled):not(.disabled):active {
+    background-color: $bright;
+    color: $lightest;
+    cursor: pointer;
+
+  }
+}
+
+.btn--secondary, btn--secondary:visited {
+  background-color: $bright;
+  color: $lightest;
+
+  &:hover, &:active, &:not(:disabled):not(.disabled):active {
+    background-color: $lightest;
+    color: $bright;
+    cursor: pointer;
+
+  }
+}

@@ -1,0 +1,275 @@
+/************************************************************************
+== QUICK STYLES =========================================================
+************************************************************************/
+@mixin font-heading() {
+  font-family: $font-heading;
+}
+
+@mixin font-text() {
+  font-family: $font-text;
+}
+
+@mixin font-btn() {
+  font-family: $font-btn;
+}
+
+@mixin weight-bold() {
+  font-weight: $weight-bold;
+}
+
+@mixin weight-normal() {
+  font-weight: normal;
+}
+
+@mixin weight-thin() {
+  font-weight: $weight-thin;
+}
+
+@mixin text-center() {
+  text-align: center;
+}
+
+@mixin text-left() {
+  text-align: left;
+}
+
+@mixin text-right() {
+  text-align: right;
+}
+
+@mixin text-uppercase() {
+  text-transform: uppercase;
+}
+
+@mixin text-capitalize() {
+  text-transform: capitalize;
+}
+
+@mixin text-normal() {
+  text-transform: none;
+}
+
+/* makes ul items layout in multiple columns */
+@mixin ul-col($i: 2) {
+  columns: $i;
+  -webkit-columns: $i;
+  -moz-columns: $i;
+}
+
+/************************************************************************
+== MIXINS ===============================================================
+************************************************************************/
+/* Appearance (removes default style put on elements by browsers) */
+@mixin appearance($appearance: none) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+}
+
+/* Apply a background image to an element */
+@mixin background-image($url, $size: cover, $position: center, $repeat: no-repeat) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+/* Adapt Pixel Font Sizes To ems */
+@mixin font-size($font-size: 16) {
+  font-size: $font-size * 1px;
+  font-size: (calc($font-size / 16)) * 1rem;
+}
+
+@mixin remy($pxval: 16) {
+  font-size: $pxval * 1px;
+  font-size: ($pxval / 16) * 1rem;
+}
+
+/* CSS Transitions effects. Apply to elements that change on hover, scroll, etc */
+@mixin transition($property: all, $duration: 250ms) {
+  -webkit-transition: $property $duration cubic-bezier(.215, .61, .355, 1);
+  -moz-transition: $property $duration cubic-bezier(.215, .61, .355, 1);
+  -ms-transition: $property $duration cubic-bezier(.215, .61, .355, 1);
+  -o-transition: $property $duration cubic-bezier(.215, .61, .355, 1);
+  transition: $property $duration cubic-bezier(.215, .61, .355, 1);
+}
+
+//@mixin transition($property: all, $duration: 300ms) {
+//  -webkit-transition: $property $duration ease;
+//  -moz-transition: $property $duration ease;
+//  -ms-transition: $property $duration ease;
+//  -o-transition: $property $duration ease;
+//  transition: $property $duration ease;
+//}
+/* Apply a box shadow to an element */
+@mixin box-shadow($distance: 3px, $blur: 6px, $opacity: 0.29) {
+  -webkit-box-shadow: 0px $distance $blur 0px rgba(0, 0, 0, $opacity);
+  -moz-box-shadow: 0px $distance $blur 0px rgba(0, 0, 0, $opacity);
+  box-shadow: 0px $distance $blur 0px rgba(0, 0, 0, $opacity);
+}
+
+@mixin gradient-background() {
+  background: rgb(248, 249, 251);
+  background: linear-gradient(177deg, rgba(248, 249, 251, 1) 22%, rgba(255, 255, 255, 1) 100%);
+}
+
+/* Add padding to Top and Bottom of page sections */
+@mixin section-padding() {
+  padding: $baseline*3 0;
+  @include b(tablet) {
+    padding: $bl*2 0;
+  }
+}
+
+@mixin lg-section-padding() {
+  padding: $baseline*4 0;
+  @include b(tablet) {
+    padding: $bl*3 0;
+  }
+}
+
+/* Add extra padding to splash sections that passes the header */
+@mixin splash-padding() {
+  padding: $baseline*5 + $header-height 0px $baseline*5 0px;
+}
+
+/* Makes a section full width with auto height */
+@mixin full-width() {
+  width: 100%;
+  height: auto;
+}
+
+/* Makes an element take up the full width and height of parent. useful. for column components. like features blog posts */
+@mixin full-height() {
+  width: 100%;
+  height: 100%;
+}
+
+/* Makes a section full width with full page height */
+@mixin full-page() {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Transparent background color */
+@mixin overlay() {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Apply a text shadow */
+@mixin text-shadow() {
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Apply a Border Radius */
+@mixin border-radius($radius: 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/* Gradients */
+@mixin gradient() {
+  // Create a gradient here https://www.colorzilla.com/gradient-editor/
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100 */
+  background: rgb(30, 87, 153); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(30, 87, 153, 1) 0%, rgba(125, 185, 232, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(30, 87, 153, 1) 0%, rgba(125, 185, 232, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(30, 87, 153, 1) 0%, rgba(125, 185, 232, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/* Flex shorthand */
+@mixin flex-row($justify: center, $align: center) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-row-reverse($justify: center, $align: center) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-column($justify: center, $align: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-column-reverse($justify: center, $align: center) {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/* ##########################
+breakpoints
+########################## */
+@mixin b($point) {
+  @if $point == large-desktop {
+    @media (max-width: 1700px) {
+      @content ;
+    }
+  } @else if $point == desktop {
+    @media (max-width: 1513px) {
+      @content ;
+    }
+  } @else if $point == laptop {
+    @media (max-width: 1350.9px) {
+      @content ;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 1023.9px) {
+      @content ;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 767.9px) {
+      @content ;
+    }
+  } @else if $point == tiny {
+    @media (max-width: 557.9px) {
+      @content ;
+    }
+  }
+}
+
+/* BOOTSTRAP GRID ============================================================ */
+// XLarge devices (desktops, 1200px and up)
+@mixin xl() {
+  @media (max-width: 1399.98px) {
+    @content;
+  }
+}
+
+// Large devices (desktops, 992px - 1199.98px)
+@mixin lg() {
+  @media (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin md() {
+  @media (max-width: 991.98px) {
+    @content;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin sm() {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@mixin xs() {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}

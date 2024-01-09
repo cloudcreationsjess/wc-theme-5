@@ -1,0 +1,23 @@
+@import 'node_modules/swiper/swiper.scss';
+
+// MAIN THEME FILES ===================================\
+
+@import "core/variables.scss";
+@import "core/mixins.scss";
+@import "core/global.scss";
+@import "core/resets.scss";
+@import "core/typography.scss";
+
+// COMPONENTS ===================================\
+
+@import "components/buttons.scss";
+
+// BLOCKS ===================================\
+@import "blocks/example.scss";
+@import "blocks/hero.scss";
+@import "blocks/offset-content.scss";
+@import "blocks/mini-cta.scss";
+
+// PARTIALS ===================================\
+@import "partials/header.scss";
+

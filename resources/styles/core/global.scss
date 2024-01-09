@@ -1,0 +1,66 @@
+#app {
+  position: relative;
+}
+
+html {
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  scroll-padding-top: $header-height;
+
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+
+  .sr-only {
+    left: 10%;
+    position: absolute;
+    transform: translateY(-110%);
+    background: $light;
+    height: 30px;
+    width: 100%;
+    padding: 8px;
+    @include transition();
+    z-index: 99999;
+
+    &:focus, &:focus-within {
+      transform: translateY(0%);
+    }
+  }
+
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    box-shadow: none;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: $lightest;
+    box-shadow: none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $mid;
+    border-radius: 15px;
+    box-shadow: none;
+  }
+}
+
+#main {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1052px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-bump {
+  height: $header-height;
+  position: relative;
+}

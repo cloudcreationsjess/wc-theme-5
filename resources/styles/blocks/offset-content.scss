@@ -1,0 +1,41 @@
+.wp-block-offset {
+  height: auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background-color: $lightest;
+
+  .container {
+    padding-left: 178px;
+    padding-top: 102px;
+    padding-bottom: 204px;
+    position: relative;
+
+    .logo {
+      position: absolute;
+      right: 0;
+      bottom: 27px;
+      width: 262px;
+      height: 262px;
+      z-index: 1;
+
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    .offset-content {
+      max-width: 608px;
+
+      .content {
+        margin-bottom: 40px;
+
+        p {
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+/***********************************************************************/
+/* TYPOGRAPHY
+/***********************************************************************/
+/********** Text Select Color ******************************************/
+::selection, ::-moz-selection {
+  color: $lightest;
+  background: $bright; /* WebKit/Blink Browsers */
+}
+
+body {
+  font-family: $font-text;
+  @include font-size(16);
+  font-weight: $regular;
+  line-height: 30px;
+  color: $darkest;
+}
+
+/***********************************************************************/
+/********** Headings ***************************************************/
+/***********************************************************************/
+.title, .heading {
+  font-family: $font-heading;
+}
+
+h1, .h1 {
+  @include font-size(55);
+  margin: 0;
+  line-height: 1.3;
+  font-family: $font-heading;
+  letter-spacing: -0.55px;
+
+  p, a {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  @include b(tablet) {
+    @include font-size(45);
+    line-height: 55px;
+  }
+}
+
+h2, .h2 {
+  @include font-size(35);
+  line-height: 45px;
+  font-family: $font-heading;
+  color: $bright;
+  letter-spacing: 0;
+  font-weight: $medium;
+  margin-bottom: 30px;
+  margin-top: 0;
+
+  p, a {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  @include b(tablet) {
+    @include font-size(30);
+  }
+}
+
+h3, .h3 {
+  @include font-size(27);
+  line-height: 1.2;
+  font-family: $font-heading;
+  color: $bright;
+  letter-spacing: 0;
+  font-weight: $medium;
+
+  p, a {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit !important;
+  }
+
+  @include b(mobile) {
+    @include font-size(25);
+  }
+}
+
+h4, .h4 {
+  @include font-size(20);
+  line-height: 1.25;
+  font-family: $font-heading;
+  color: $bright;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: $semi-bold;
+
+  p, a {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit !important;
+  }
+}
+
+h5, .h5 {
+  @include font-size(15);
+  line-height: 25px;
+  font-family: $font-heading;
+  color: $bright;
+  letter-spacing: 0;
+  font-weight: $regular;
+
+  p, a {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+}
+
+
+/***********************************************************************/
+/*********** Paragraphs and Text Effects *******************************/
+/***********************************************************************/
+p, .p {
+  @include font-size(16);
+  line-height: 1.875;
+  font-family: $font-text;
+  color: $darkest;
+  font-weight: $regular;
+}
+
+i, em {
+  @include transition();
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+small {
+}
+
+sup, sub {
+}
+
+/***********************************************************************/
+/*********** Links *****************************************************/
+/***********************************************************************/
+a, a:visited {
+  color: $link-color;
+  text-decoration: underline;
+  text-underline-color: transparent;
+  outline: none;
+  @include transition();
+}
+
+a:hover, a:focus, a:active {
+  text-underline-color: $link-color;
+  text-decoration: none;
+  outline: none;
+}
+
+/***********************************************************************/
+/********** Lines & Boxes **********************************************/
+/***********************************************************************/
+hr {
+  height: 0px;
+  margin: $baseline*3 0px;
+  border: none;
+  border-bottom: 2px solid var(--black);
+}
+
+/***********************************************************************/
+/********** Default Blockquote Styles **********************************/
+/***********************************************************************/
+blockquote {
+  p {
+  }
+
+  cite {
+    &::before {
+    }
+  }
+}
+
+/***********************************************************************/
+/****** LISTS **********************************************************/
+/***********************************************************************/
+ol, ul {
+  list-style-type: none;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+main {
+  ol, ul {
+    list-style-position: inside;
+    font-weight: normal;
+  }
+}
+
+/***********************************************************************/
+/****** INPUT **********************************************************/
+/***********************************************************************/
+input {
+}
