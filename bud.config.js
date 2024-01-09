@@ -192,11 +192,6 @@ export default async (app) => {
           color: {
             text: '#222222',
           },
-          ':hover': {
-            typography: {
-              textDecoration: 'underline',
-            },
-          },
         },
         button: {
           color: {

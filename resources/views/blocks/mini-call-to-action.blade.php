@@ -5,14 +5,16 @@
 @else
 
   <div class="{{ $block->classes }}">
-    <div class="text">
-      {{$mini_cta['title']}}
-    </div>
-    @if ($mini_cta['button'])
-      <a class="btn btn--outline" href="{{ $mini_cta['button']['url'] }}" target="{{ $mini_cta['button']['target'] }}">
-        {{ $mini_cta['button']['title'] }}
-      </a>
-    @endif
-  </div>
+    <div class="mini-container">
+      <h3 class="text">
+        {{$mini_cta['title']}}
+      </h3>
 
+      @if ($mini_cta['button'])
+        <a class="btn btn--primary-light" href="{{ $mini_cta['button']['url'] }}" target="{{ $mini_cta['button']['target'] }}">
+          {{ $mini_cta['button']['title'] }}
+        </a>
+      @endif
+    </div>
+  </div>
 @endif

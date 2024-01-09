@@ -35,7 +35,7 @@
   }
 }
 
-.btn--primary, .btn--outline, .btn--primary:visited .btn--outline:visited {
+.btn--outline, .btn--outline:visited {
   background-color: $lightest;
   color: $bright;
 
@@ -47,14 +47,46 @@
   }
 }
 
-.btn--secondary, btn--secondary:visited {
+.btn--primary-light, .btn--primary-light:visited {
   background-color: $bright;
   color: $lightest;
+  border: 1px solid $lightest;
 
   &:hover, &:active, &:not(:disabled):not(.disabled):active {
     background-color: $lightest;
     color: $bright;
     cursor: pointer;
+    border-color: $lightest;
 
+  }
+
+}
+
+.btn--primary, .btn--primary:visited {
+  background-color: $bright;
+  color: $lightest;
+
+  &:hover, &:active, &:not(:disabled):not(.disabled):active {
+    background-color: transparent;
+    color: $bright;
+    cursor: pointer;
+
+  }
+}
+
+.btn--text, .btn--text:visited {
+  background-color: transparent;
+  color: $bright;
+  text-decoration: underline;
+  text-decoration-color: $lightest;
+  @include transition();
+  font-weight: $semi-bold;
+  font-family: $font-normal;
+  @include font-size(16);
+  letter-spacing: 1.6px;
+  text-underline-offset: 3px;
+
+  &:hover, &:active, &:not(:disabled):not(.disabled):active {
+    text-decoration-color: $bright;
   }
 }

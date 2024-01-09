@@ -52,6 +52,7 @@ html {
 
 #main {
   overflow: hidden;
+  width: 100%;
 }
 
 .container {
@@ -63,4 +64,8 @@ html {
 .nav-bump {
   height: $header-height;
   position: relative;
+}
+
+a:where(:not(.wp-element-button)) {
+  text-decoration: none !important;
 }

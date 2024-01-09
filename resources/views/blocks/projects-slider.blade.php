@@ -9,58 +9,64 @@
     $projects = $project_data['project'];
   @endphp
   <div class="{{ $block->classes }}">
-    @if($project_data['title'])
-      <h2 class="title">{!! $project_data['title'] !!}</h2>
-    @endif
-    <div class="swiper-container">
+    <div class="container">
+      @if($project_data['title'])
+        <h2 class="title">{!! $project_data['title'] !!}</h2>
+      @endif
+    </div>
+    <div class="swiper">
       <div class="swiper-wrapper">
 
         @foreach($projects as $project)
-
-          <a class="swiper-slide" href="{{ $project['learn_more_url'] }}">
-            <span class="image-wrapper">
-              @if($project['tags'])
-                @foreach($project['tags'] as $tag)
-                  <span class="tag">{{ $tag }}</span>
-                @endforeach
-              @endif
-              {!! the_image_by_post_id($project['id'], 'featured') !!}
-            </span>
-            <header>
-              <h3>{{ $project['name'] }}</h3>
-              @if($project['locations'])
-                @foreach($project['locations'] as $location)
-                  <p>{{ $location->name }}</p>
-                @endforeach
-              @endif
-              @if($project['services'])
-                @foreach($project['services'] as $service)
-                  <div class="service">{!! $service !!}</div>
-                @endforeach
-              @endif
-              <span>Learn More</span>
-            </header>
-          </a>
+          @php
+            $services = get_field('services_relationship', $project['id']);
+          @endphp
+          <div class="swiper-slide">
+            <a class="project-card" href="{{ $project['learn_more_url'] }}">
+              <span class="image-wrapper">
+                {!! the_image_by_post_id($project['id'], 'featured-image', 'medium_large', 'medium_large') !!}
+                @if($project['tags'])
+                  <span class="tags">
+                    @foreach($project['tags'] as $tag)
+                      <span class="tag">{{ $tag }}</span>
+                    @endforeach
+                  </span>
+                @endif
+              </span>
+              <header>
+                <span class="header-content">
+                  <h3>{{ $project['name'] }}</h3>
+                  @if($project['locations'])
+                    @foreach($project['locations'] as $location)
+                      <p class="h4 location"> {{ $location->name }}</p>
+                      @if(!$loop->last)
+                        ,
+                      @endif
+                    @endforeach
+                  @endif
+                  @if($services)
+                    <span class="services">
+                 @foreach($services as $key => $service)
+                        <div class="service h5">{!! $service->post_title !!}{!! (!$loop->last) ? ', ' : '' !!}</div>
+                      @endforeach
+                    </span>
+                  @endif
+                </span>
+                <span class="cta">
+                  <p class="btn--text">Learn More</p>
+                  <x-arrow/>
+                </span>
+              </header>
+            </a>
+          </div>
         @endforeach
       </div>
       <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
+      <div class="scroll-bar">
+        <div class="swiper-scrollbar"></div>
+      </div>
 
     </div>
   </div>
-
-  @unless($is_preview)
-    <script>
-      // Initialize Swiper
-      var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
-    </script>
-  @endunless
 
 @endif

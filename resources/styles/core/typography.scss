@@ -69,6 +69,7 @@ h3, .h3 {
   color: $bright;
   letter-spacing: 0;
   font-weight: $medium;
+  margin-top: 0;
 
   p, a {
     font-size: inherit;
@@ -89,6 +90,7 @@ h4, .h4 {
   letter-spacing: 0;
   text-transform: none;
   font-weight: $semi-bold;
+  margin-top: 0;
 
   p, a {
     font-size: inherit;
@@ -141,19 +143,19 @@ sup, sub {
 /***********************************************************************/
 /*********** Links *****************************************************/
 /***********************************************************************/
-a, a:visited {
-  color: $link-color;
-  text-decoration: underline;
-  text-underline-color: transparent;
-  outline: none;
-  @include transition();
-}
-
-a:hover, a:focus, a:active {
-  text-underline-color: $link-color;
-  text-decoration: none;
-  outline: none;
-}
+//a, a:visited {
+//  color: $link-color;
+//  text-decoration: underline;
+//  text-underline-color: transparent;
+//  outline: none;
+//  @include transition();
+//}
+//
+//a:hover, a:focus, a:active {
+//  text-underline-color: $link-color;
+//  text-decoration: none;
+//  outline: none;
+//}
 
 /***********************************************************************/
 /********** Lines & Boxes **********************************************/

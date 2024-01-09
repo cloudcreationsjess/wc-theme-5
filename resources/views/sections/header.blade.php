@@ -22,7 +22,7 @@
         @php
           $btn = get_field('button', 'options')
         @endphp
-        <a class="btn btn--secondary" href="{{ $btn['url'] }}" tabindex="0">{!! $btn['title'] !!}</a>
+        <a class="btn btn--primary" href="{{ $btn['url'] }}" tabindex="0">{!! $btn['title'] !!}</a>
       @endif
     </div>
 

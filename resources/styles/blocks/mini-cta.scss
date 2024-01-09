@@ -1,0 +1,26 @@
+.wp-block-mini-call-to-action {
+  background-color: $bright;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  width: 100%;
+  position: relative;
+
+  .mini-container {
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    h3 {
+      color: $lightest;
+      margin-bottom: 0;
+    }
+
+    a {
+      display: inline-block;
+    }
+  }
+}

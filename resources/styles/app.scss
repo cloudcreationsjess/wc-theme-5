@@ -1,5 +1,5 @@
 @import 'node_modules/swiper/swiper.scss';
-
+@import 'node_modules/swiper/modules/scrollbar.scss';
 // MAIN THEME FILES ===================================\
 
 @import "core/variables.scss";
@@ -17,6 +17,8 @@
 @import "blocks/hero.scss";
 @import "blocks/offset-content.scss";
 @import "blocks/mini-cta.scss";
+@import "blocks/projects-block.scss";
+@import "blocks/image-with-content.scss";
 
 // PARTIALS ===================================\
 @import "partials/header.scss";

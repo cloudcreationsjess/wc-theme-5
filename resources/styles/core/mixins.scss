@@ -101,7 +101,7 @@
 //  transition: $property $duration ease;
 //}
 /* Apply a box shadow to an element */
-@mixin box-shadow($distance: 3px, $blur: 6px, $opacity: 0.29) {
+@mixin box-shadow($distance: 3px, $blur: 10px, $opacity: 0.29) {
   -webkit-box-shadow: 0px $distance $blur 0px rgba(0, 0, 0, $opacity);
   -moz-box-shadow: 0px $distance $blur 0px rgba(0, 0, 0, $opacity);
   box-shadow: 0px $distance $blur 0px rgba(0, 0, 0, $opacity);

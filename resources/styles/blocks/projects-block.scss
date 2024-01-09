@@ -1,4 +1,192 @@
 .wp-block-projects-slider {
   width: 100%;
-  
+  background-color: $lightest;
+  position: relative;
+  z-index: 2;
+
+  .swiper {
+    overflow: unset;
+    position: relative;
+    padding-top: 40px;
+
+    .swiper-wrapper {
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+      position: relative;
+
+      .swiper-slide {
+        width: 430px;
+        align-self: stretch;
+        height: unset;
+        min-height: 580px;
+
+        .project-card {
+          @include box-shadow();
+          overflow: hidden;
+          border-radius: 10px;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          &:hover {
+            .btn--text {
+              text-decoration-color: $bright;
+            }
+          }
+
+
+          .image-wrapper {
+            height: 370px;
+            width: 100%;
+            position: relative;
+            display: inline-block;
+
+            .featured-image {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+
+
+            }
+
+
+            .tags {
+              display: flex;
+              flex-direction: row;
+              position: absolute;
+              top: 20px;
+              left: 20px;
+
+              .tag {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 28px;
+                max-height: 35px;
+                color: $lightest;
+                @include font-size(14);
+                border-radius: 21px;
+                border: 1px solid $lightest;
+                background-color: #FFFFFF26;
+                margin-right: 10px;
+              }
+            }
+          }
+
+          header {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: $lightest;
+            flex: 1;
+
+            .header-content {
+              display: flex;
+              flex-direction: column;
+              flex: 1;
+              justify-content: flex-start;
+              align-items: flex-start;
+
+              h3 {
+                margin-bottom: 15px;
+                text-decoration: none;
+              }
+
+              .services {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-bottom: 41px;
+
+                .service {
+                  color: $darkest-hover;
+                  margin-right: 2px;
+                }
+              }
+
+              .location {
+                margin-bottom: 13px;
+              }
+            }
+
+            .cta {
+              margin-bottom: 2px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+
+
+              p {
+                display: inline-block;
+                margin-top: 0;
+                margin-bottom: 0;
+              }
+
+              svg {
+                height: 20px;
+
+                stroke: $bright;
+              }
+
+            }
+
+
+          }
+        }
+      }
+
+    }
+
+    //.swiper-pagination {
+    //  top: unset;
+    //  bottom: 0;
+    //  position: absolute;
+    //  line-height: unset;
+    //
+    //  .swiper-pagination-bullet {
+    //    width: 252px;
+    //    margin-left: 0;
+    //    margin-right: 0;
+    //    height: 1px;
+    //    background-color: #CCCCC4;
+    //    @include transition();
+    //  }
+    //
+    //  .swiper-pagination-bullet-active {
+    //    background-color: $bright;
+    //    height: 2px;
+    //  }
+    //}
+
+    .scroll-bar {
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .swiper-scrollbar {
+        height: 2px;
+        background-color: #CCCCC4;
+        width: 875px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+        .swiper-scrollbar-drag {
+          height: 2px;
+          background-color: $bright;
+        }
+      }
+    }
+
+
+  }
+
+
 }

@@ -16,17 +16,16 @@
             $button = new FieldsBuilder('button');
 
             $button
-                ->addLink('button', [
-                    'label'             => 'Button',
-                    'instructions'      => '',
-                    'required'          => 0,
-                    'conditional_logic' => [],
-                    'wrapper'           => [
-                        'width' => '',
-                        'class' => 'acf-seamless',
-                        'id'    => '',
+                ->addButtonGroup('button_type', [
+                    'label'   => 'Button Type',
+                    'choices' => [
+                        'outline' => 'Outline',
+                        'primary' => 'Primary',
                     ],
-                    'return_format'     => 'array',
+                ])
+                ->addLink('button', [
+                    'label'         => 'Button',
+                    'return_format' => 'array',
                 ]);
 
             return $button;
