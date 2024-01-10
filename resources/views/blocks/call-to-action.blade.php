@@ -5,7 +5,7 @@
 @else
 
   @php
-    $backgroundColorClass = $block->instance->attributes['backgroundColor'];
+    $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'lightest';
   @endphp
 
   <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color">

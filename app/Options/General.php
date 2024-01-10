@@ -59,21 +59,7 @@
                     ])
                 ->addFields($this->get(Button::class))
                 ->addTab('Footer', [
-                    'label'             => 'Footer',
-                    'instructions'      => '',
-                    'required'          => 0,
-                    'conditional_logic' => [],
-                    'wrapper'           => [
-                        'width' => '',
-                        'class' => '',
-                        'id'    => '',
-                    ],
-                    'default_value'     => '',
-                    'placeholder'       => '',
-                    'prepend'           => '',
-                    'append'            => '',
-                    'maxlength'         => '',
-                    'placement'         => '',
+                    'label' => 'Footer',
                 ])
                 ->addImage('footer_logo', [
                     'label'   => 'Footer Logo',
@@ -81,6 +67,41 @@
                         'width' => '50%', // Set the width to 50%
                         'class' => 'acf-seamless',
                         'id'    => '',
+                    ],
+                ])
+                ->addWysiwyg('company_info', [
+                    'label'   => 'Company Info',
+                    'wrapper' => [
+                        'width' => '50%', // Set the width to 50%
+                        'class' => 'acf-seamless',
+                        'id'    => '',
+                    ],
+                ])
+                ->addRepeater('social_links', [
+                    'label'        => 'Social Links',
+                    'layout'       => 'block',
+                    'button_label' => 'Add Social Link',
+                    'sub_fields'   => [
+                        [
+                            'label'   => 'Social Link',
+                            'name'    => 'social_link',
+                            'type'    => 'link',
+                            'wrapper' => [
+                                'width' => '50%', // Set the width to 50%
+                                'class' => 'acf-seamless',
+                                'id'    => '',
+                            ],
+                        ],
+                        [
+                            'label'   => 'Social Icon',
+                            'name'    => 'social_icon',
+                            'type'    => 'image',
+                            'wrapper' => [
+                                'width' => '50%', // Set the width to 50%
+                                'class' => 'acf-seamless',
+                                'id'    => '',
+                            ],
+                        ],
                     ],
                 ]);
 

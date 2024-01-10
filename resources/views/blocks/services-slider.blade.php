@@ -29,10 +29,7 @@
               <a href="{{ $service['learn_more_url'] }}" class="services-card">
                 <h3>{{ $service['name'] }}</h3>
                 <p class="excerpt">{{ $excerpt }}</p>
-                <span class="cta">
-                  <p class="btn--text">Learn More</p>
-                  <x-arrow/>
-                </span>
+                <x-learn-more/>
               </a>
             </div>
           @endforeach

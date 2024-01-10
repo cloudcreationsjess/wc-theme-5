@@ -52,10 +52,7 @@
                     </span>
                   @endif
                 </span>
-                <span class="cta">
-                  <p class="btn--text">Learn More</p>
-                  <x-arrow/>
-                </span>
+                <x-learn-more/>
               </header>
             </a>
           </div>

@@ -50,9 +50,17 @@ $link-color: #283329;
 
 @font-face {
   font-family: 'Inter Tight';
-  src: url('../../fonts/InterTight-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+  src: url('../../fonts/InterTight-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../../fonts/InterTight-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
   font-display: swap;
 }
 

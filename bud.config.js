@@ -130,19 +130,20 @@ export default async (app) => {
           fontFamily: 'Inter Tight',
           name: 'Inter Tight',
           slug: 'inter-tight',
-          fallback: 'sans-serif',
-          fontDisplay: 'swap',
-          fontWeights: [100, 300, 400, 500, 700, 900],
-          src: "url('../../fonts/InterTight-VariableFont_wght.ttf') format('truetype')",
-        },
-        {
-          fontFamily: 'Inter Italic',
-          name: 'Inter Italic',
-          slug: 'inter-italic',
-          fallback: 'sans-serif',
-          weights: [100, 300, 400, 500, 700, 900],
-          fontDisplay: 'swap',
-          src: "url('../../fonts/InterTight-VariableFont_wght.ttf') format('truetype')",
+          fontFace: [
+            {
+              fontFamily: 'Inter Tight',
+              fontWeight: '400',
+              fontStyle: 'normal',
+              src: "url('../../fonts/InterTight-Regular.ttf') format('truetype')",
+            },
+            {
+              fontFamily: 'Inter TIght',
+              fontWeight: '600',
+              fontStyle: 'normal',
+              src: "url('../../fonts/Inter-SemiBold.ttf') format('truetype')",
+            },
+          ],
         },
       ],
       fontSizes: [

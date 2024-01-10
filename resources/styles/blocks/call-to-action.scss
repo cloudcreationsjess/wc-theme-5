@@ -8,15 +8,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: $lightest;
 
     .pullquote {
       margin-bottom: 50px;
+      color: inherit;
+      text-align: center;
+
+    }
+
+    .subtext {
+      color: inherit;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     .btn {
       margin-bottom: 20px;
     }
 
+  }
+
+  &.has-bright-background-color, &.has-darkest-background-color, &.has-dark-background-color {
+    .mini-container {
+      color: $lightest;
+    }
+
+  }
+
+  &.has-lightest-background-color, &.has-light-background-color {
+    .mini-container {
+      color: $darkest;
+    }
   }
 
 
