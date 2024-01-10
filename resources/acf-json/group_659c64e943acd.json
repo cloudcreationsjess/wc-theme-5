@@ -1,6 +1,6 @@
 {
     "key": "group_659c64e943acd",
-    "title": "Services",
+    "title": "Project",
     "fields": [
         {
             "key": "field_659c64e985c39",
@@ -52,5 +52,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704751026
+    "modified": 1704842469
 }

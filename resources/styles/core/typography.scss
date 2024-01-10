@@ -180,6 +180,20 @@ blockquote {
   }
 }
 
+.pullquote {
+  font-family: $font-accent;
+  @include font-size(60);
+  font-weight: $semi-bold;
+  line-height: 75px;
+}
+
+.mice {
+  font-family: $font-normal;
+  @include font-size(14);
+  line-height: 22px;
+  font-weight: $regular;
+}
+
 /***********************************************************************/
 /****** LISTS **********************************************************/
 /***********************************************************************/

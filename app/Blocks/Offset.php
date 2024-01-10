@@ -102,7 +102,7 @@
             'align_content' => false,
             'full_height'   => false,
             'anchor'        => false,
-            'mode'          => false,
+            'mode'          => true,
             'multiple'      => true,
             'jsx'           => true,
         ];

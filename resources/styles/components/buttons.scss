@@ -47,6 +47,20 @@
   }
 }
 
+.btn--outline-light, .btn--outline-light:visited {
+  background-color: $bright;
+  color: $lightest;
+  border: 1px solid $lightest;
+
+  &:hover, &:active, &:not(:disabled):not(.disabled):active {
+    background-color: $lightest;
+    color: $bright;
+    cursor: pointer;
+    border-color: $lightest;
+
+  }
+}
+
 .btn--primary-light, .btn--primary-light:visited {
   background-color: $bright;
   color: $lightest;

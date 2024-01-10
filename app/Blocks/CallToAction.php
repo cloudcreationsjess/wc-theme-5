@@ -2,24 +2,25 @@
 
     namespace App\Blocks;
 
+    use App\Fields\Partials\Button;
     use Log1x\AcfComposer\Block;
     use StoutLogic\AcfBuilder\FieldsBuilder;
 
-    class ProjectsSlider extends Block
+    class CallToAction extends Block
     {
         /**
          * The block name.
          *
          * @var string
          */
-        public $name = 'Projects Slider';
+        public $name = 'Call To Action';
 
         /**
          * The block description.
          *
          * @var string
          */
-        public $description = 'A simple Projects Slider block.';
+        public $description = 'A simple Call To Action block.';
 
         /**
          * The block category.
@@ -96,6 +97,10 @@
             'full_height'   => false,
             'anchor'        => false,
             'mode'          => true,
+            'color'         => [
+                'background' => true,
+                'text'       => false,
+            ],
             'multiple'      => true,
             'jsx'           => true,
         ];
@@ -125,7 +130,7 @@
          */
         public function with() {
             return [
-                'project_data' => $this->blockData(),
+                'block_data' => $this->blockData(),
             ];
         }
 
@@ -136,56 +141,13 @@
          */
         public function blockData() {
             return [
-                'is_preview' => get_field('is_preview'),
-                'title'      => $this->getTitle(),
-                'project'    => $this->getProjects(),
-
+                'is_preview'       => get_field('is_preview'),
+                'background_type'  => get_field('background_choose'),
+                'background_image' => get_field('background_choose'),
+                'title'            => get_field('title'),
+                'button'           => get_field('button'),
+                'subtext'          => get_field('subtext'),
             ];
-        }
-
-        /**
-         * Get the block title.
-         *
-         * @return string
-         */
-        private function getTitle() {
-            return get_field('title');
-        }
-
-        private function getProjects() {
-            // Add logic to retrieve and format your project data here
-            // You can use WP_Query or any other method to get your project data
-            $projects = [];
-
-            // Example: Get project data using WP_Query
-            $args = [
-                'post_type'      => 'project', // Adjust the post type accordingly
-                'posts_per_page' => -1,
-                // Add any other query parameters as needed
-            ];
-
-            $query = new \WP_Query($args);
-
-            while ( $query->have_posts() ) {
-                $query->the_post();
-
-                $services = function_exists('get_field') ? get_field('services_relationship') : '';
-
-                // Format and push project data to the $projects array
-                $projects[] = [
-                    'name'           => get_the_title(),
-                    'id'             => get_the_id(),
-                    'locations'      => wp_get_post_terms(get_the_ID(), 'location'),
-                    'services'       => $services,
-                    'tags'           => wp_get_post_terms(get_the_ID(), 'post_tag', ['fields' => 'names']),
-                    'learn_more_url' => get_permalink(),
-                ];
-            }
-
-            // Reset post data
-            wp_reset_postdata();
-
-            return $projects;
         }
 
         /**
@@ -194,16 +156,34 @@
          * @return array
          */
         public function fields() {
-            $projectsSlider = new FieldsBuilder('projects_slider');
+            $callToAction = new FieldsBuilder('call_to_action');
 
-            $projectsSlider
+            $callToAction
+                ->addButtonGroup('background_choose', [
+                    'label'         => 'Background',
+                    'choices'       => [
+                        'image'  => 'Image',
+                        'colour' => 'Colour',
+                    ],
+                    'default_value' => '',
+                    'layout'        => 'horizontal',
+                    'return_format' => 'value',
+                ])
+                ->addImage('background_image', [
+                    'label'             => 'Background Image',
+                    'conditional_logic' => [
+                        [
+                            'field'    => 'background_choose',
+                            'operator' => '==',
+                            'value'    => 'image',
+                        ],
+                    ],
+                ])
                 ->addText('title', ['label' => 'Title'])
-                ->addMessage('message', 'message', [
-                    'label'   => '',
-                    'message' => 'Projects are auto-populated, please edit order in dashboard > projects',
-                ]);
+                ->addFields($this->get(Button::class))
+                ->addText('subtext', ['label' => 'Subtext']);
 
-            return $projectsSlider->build();
+            return $callToAction->build();
         }
 
         /**
@@ -213,8 +193,8 @@
          */
         public function enqueue() {
             wp_enqueue_style(
-                'dummytitle',
-                get_template_directory_uri() . '/resources/styles/blocks/projects-block.scss', // Adjust the path to your compiled CSS file
+                'call-to-action',
+                get_template_directory_uri() . '/resources/styles/blocks/call-to-action.scss', // Adjust the path to your compiled CSS file
 
             );
         }

@@ -2,24 +2,25 @@
 
     namespace App\Blocks;
 
+    use App\Fields\Partials\Button;
     use Log1x\AcfComposer\Block;
     use StoutLogic\AcfBuilder\FieldsBuilder;
 
-    class ProjectsSlider extends Block
+    class ServicesSlider extends Block
     {
         /**
          * The block name.
          *
          * @var string
          */
-        public $name = 'Projects Slider';
+        public $name = 'Services Slider';
 
         /**
          * The block description.
          *
          * @var string
          */
-        public $description = 'A simple Projects Slider block.';
+        public $description = 'A simple Services Slider block.';
 
         /**
          * The block category.
@@ -125,7 +126,7 @@
          */
         public function with() {
             return [
-                'project_data' => $this->blockData(),
+                'block_data' => $this->blockData(),
             ];
         }
 
@@ -136,32 +137,22 @@
          */
         public function blockData() {
             return [
-                'is_preview' => get_field('is_preview'),
-                'title'      => $this->getTitle(),
-                'project'    => $this->getProjects(),
+                'is_preview'  => get_field('is_preview'),
+                'title'       => get_field('title'),
+                'button'      => get_field('button'),
+                'button_type' => get_field('button_type'),
+                'services'    => $this->getServices(),
 
             ];
         }
 
-        /**
-         * Get the block title.
-         *
-         * @return string
-         */
-        private function getTitle() {
-            return get_field('title');
-        }
+        private function getServices() {
 
-        private function getProjects() {
-            // Add logic to retrieve and format your project data here
-            // You can use WP_Query or any other method to get your project data
-            $projects = [];
+            $services = [];
 
-            // Example: Get project data using WP_Query
             $args = [
-                'post_type'      => 'project', // Adjust the post type accordingly
+                'post_type'      => 'service',
                 'posts_per_page' => -1,
-                // Add any other query parameters as needed
             ];
 
             $query = new \WP_Query($args);
@@ -169,15 +160,13 @@
             while ( $query->have_posts() ) {
                 $query->the_post();
 
-                $services = function_exists('get_field') ? get_field('services_relationship') : '';
+                $excerpt = get_field('excerpt');
 
                 // Format and push project data to the $projects array
-                $projects[] = [
+                $services[] = [
                     'name'           => get_the_title(),
                     'id'             => get_the_id(),
-                    'locations'      => wp_get_post_terms(get_the_ID(), 'location'),
-                    'services'       => $services,
-                    'tags'           => wp_get_post_terms(get_the_ID(), 'post_tag', ['fields' => 'names']),
+                    'excerpt'        => $excerpt,
                     'learn_more_url' => get_permalink(),
                 ];
             }
@@ -185,7 +174,7 @@
             // Reset post data
             wp_reset_postdata();
 
-            return $projects;
+            return $services;
         }
 
         /**
@@ -194,16 +183,17 @@
          * @return array
          */
         public function fields() {
-            $projectsSlider = new FieldsBuilder('projects_slider');
+            $servicesSlider = new FieldsBuilder('services_slider');
 
-            $projectsSlider
+            $servicesSlider
                 ->addText('title', ['label' => 'Title'])
+                ->addFields($this->get(Button::class))
                 ->addMessage('message', 'message', [
                     'label'   => '',
-                    'message' => 'Projects are auto-populated, please edit order in dashboard > projects',
+                    'message' => 'Services are auto-populated, please edit order in dashboard > services',
                 ]);
 
-            return $projectsSlider->build();
+            return $servicesSlider->build();
         }
 
         /**
@@ -213,8 +203,8 @@
          */
         public function enqueue() {
             wp_enqueue_style(
-                'dummytitle',
-                get_template_directory_uri() . '/resources/styles/blocks/projects-block.scss', // Adjust the path to your compiled CSS file
+                'services-slider',
+                get_template_directory_uri() . '/resources/styles/blocks/services-slider.scss', // Adjust the path to your compiled CSS file
 
             );
         }

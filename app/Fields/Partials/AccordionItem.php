@@ -16,8 +16,8 @@
             $accordionItem = new FieldsBuilder('accordion_item');
 
             $accordionItem
-                ->addRepeater('accordion_item', [
-                    'label'  => 'Accordion Item',
+                ->addRepeater('accordion_items', [
+                    'label'  => 'Accordion Items',
                     'layout' => 'block',
                 ])
                 ->addText('accordion_title')

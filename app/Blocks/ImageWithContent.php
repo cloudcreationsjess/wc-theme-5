@@ -99,7 +99,7 @@
             'align_content' => false,
             'full_height'   => false,
             'anchor'        => false,
-            'mode'          => false,
+            'mode'          => true,
             'multiple'      => true,
             'color'         => [
                 'background' => true,
@@ -172,7 +172,7 @@
                         case 'content':
                             $itemData['content'] = get_sub_field('content');
                             break;
-                        case 'accordion':
+                        case 'accordion_item':
                             $itemData['accordion_items'] = get_sub_field('accordion_items');
                             break;
                         case 'button':
@@ -215,6 +215,7 @@
                         'line'  => 'Line',
                     ],
                     'default_value' => 'plain',
+                    'position'      => 'side',
                 ])
                 ->addImage('image', [
                     'label'   => 'Image',
@@ -251,6 +252,10 @@
          * @return void
          */
         public function enqueue() {
+            wp_enqueue_style(
+                'image-content',
+                get_template_directory_uri() . '/resources/styles/blocks/image-with-content.scss', // Adjust the path to your compiled CSS file
 
+            );
         }
     }

@@ -1,0 +1,23 @@
+.wp-block-call-to-action {
+  width: 100%;
+  padding: 118px 0px;
+  position: relative;
+
+  .mini-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .pullquote {
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      margin-bottom: 20px;
+    }
+
+  }
+
+
+}
