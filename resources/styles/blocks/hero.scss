@@ -1,5 +1,5 @@
 .wp-block-hero {
-  min-height: 100vh;
+  min-height: calc(100vh - $header-height);
 
 
   .background {
@@ -36,7 +36,7 @@
 
 
     .hero-content {
-      padding-top: 68vh;
+      padding-top: 48vh;
       padding-bottom: 128px;
       display: flex;
       flex-direction: column;

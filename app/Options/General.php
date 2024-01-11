@@ -69,40 +69,60 @@
                         'id'    => '',
                     ],
                 ])
-                ->addWysiwyg('company_info', [
-                    'label'   => 'Company Info',
+                ->addGroup('footer_contact_info', [
+                    'label' => 'Business Contact Information',
+                ])
+                ->addText('phone', [
+                    'label' => 'Phone',
+                ])
+                ->addText('email', [
+                    'label' => 'Email',
+                ])
+                ->addText('address', [
+                    'label'   => 'Address',
                     'wrapper' => [
                         'width' => '50%', // Set the width to 50%
                         'class' => 'acf-seamless',
                         'id'    => '',
                     ],
                 ])
+                ->addText('map_link', [
+                    'label'   => 'Map Link',
+                    'wrapper' => [
+                        'width' => '50%', // Set the width to 50%
+                        'class' => 'acf-seamless',
+                        'id'    => '',
+                    ],
+                ])
+                ->endGroup()
                 ->addRepeater('social_links', [
                     'label'        => 'Social Links',
                     'layout'       => 'block',
                     'button_label' => 'Add Social Link',
-                    'sub_fields'   => [
-                        [
-                            'label'   => 'Social Link',
-                            'name'    => 'social_link',
-                            'type'    => 'link',
-                            'wrapper' => [
-                                'width' => '50%', // Set the width to 50%
-                                'class' => 'acf-seamless',
-                                'id'    => '',
-                            ],
-                        ],
-                        [
-                            'label'   => 'Social Icon',
-                            'name'    => 'social_icon',
-                            'type'    => 'image',
-                            'wrapper' => [
-                                'width' => '50%', // Set the width to 50%
-                                'class' => 'acf-seamless',
-                                'id'    => '',
-                            ],
-                        ],
+                    'sub_fields'   => ['social_icon', 'social_link'],
+                ])
+                ->addImage('social_icon', [
+                    'label'   => 'Social Icon',
+                    'wrapper' => [
+                        'width' => '50%', // Set the width to 50%
+                        'class' => 'acf-seamless',
+                        'id'    => '',
                     ],
+                ])
+                ->addText('social_link', [
+                    'label'   => 'Social Link',
+                    'wrapper' => [
+                        'width' => '50%', // Set the width to 50%
+                        'class' => 'acf-seamless',
+                        'id'    => '',
+                    ],
+                ])
+                ->endRepeater()
+                ->addText('contact_form_title', [
+                    'label' => 'Subscribe Form Title',
+                ])
+                ->addTextArea('contact_form_embed', [
+                    'label' => 'Subscribe Embed Code',
                 ]);
 
             return $general->build();

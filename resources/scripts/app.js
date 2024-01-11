@@ -30,7 +30,7 @@ function projectsSlide() {
 function servicesSlide() {
   // Initialize Swiper
   const swiper2 = new Swiper('.services-slider', {
-    slidesPerView: '2',
+    slidesPerView: 'auto',
     spaceBetween: 15,
     scrollbar: {
       el: '.swiper-scrollbar',

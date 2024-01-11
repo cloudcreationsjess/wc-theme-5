@@ -58,7 +58,7 @@
 
 
         .swiper-slide {
-          width: 608px;
+          width: 608px !important;
           min-height: 366px;
 
 
@@ -74,6 +74,11 @@
 
             .excerpt {
               margin-bottom: 122px;
+              @include font-size(16);
+              font-weight: $regular;
+              line-height: 30px;
+              letter-spacing: 0;
+              max-width: 480px;
             }
 
             .cta {
