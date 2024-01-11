@@ -13,6 +13,9 @@ export default async (app) => {
    * @see {@link https://bud.js.org/docs/bud.entry}
    * @see {@link https://bud.js.org/docs/bud.assets}
    */
+  app.provide({
+    jquery: ['jQuery', '$'],
+  });
   app
     .entry('app', ['@scripts/app', '@styles/app'])
     .entry('editor', ['@scripts/editor', '@styles/editor'])
@@ -138,7 +141,7 @@ export default async (app) => {
               src: "url('../../fonts/InterTight-Regular.ttf') format('truetype')",
             },
             {
-              fontFamily: 'Inter TIght',
+              fontFamily: 'Inter Tight',
               fontWeight: '600',
               fontStyle: 'normal',
               src: "url('../../fonts/Inter-SemiBold.ttf') format('truetype')",
@@ -192,6 +195,10 @@ export default async (app) => {
         link: {
           color: {
             text: '#222222',
+          },
+          typography: {
+            textDecoration: 'none',
+            cursor: 'pointer',
           },
         },
         button: {

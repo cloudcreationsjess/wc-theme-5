@@ -59,6 +59,7 @@ html {
   max-width: 1052px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 .mini-container {
@@ -72,9 +73,6 @@ html {
   position: relative;
 }
 
-a:where(:not(.wp-element-button)) {
-  text-decoration: none !important;
-}
 
 .cta {
   margin-bottom: 2px;
@@ -95,4 +93,8 @@ a:where(:not(.wp-element-button)) {
     stroke: $bright;
   }
 
+}
+
+.editor-post-title {
+  padding: 20px;
 }

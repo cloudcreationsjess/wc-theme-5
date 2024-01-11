@@ -8,6 +8,7 @@ domReady(async () => {
   projectsSlide();
   servicesSlide();
   accordion();
+  modalPop();
 });
 
 /**
@@ -63,5 +64,34 @@ function accordion() {
         this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true',
       );
     });
+  });
+}
+
+function modalPop() {
+  // Function to show the modal
+  function showModal(target) {
+    $(target).fadeIn().css('display', 'flex');
+  }
+
+  // Function to hide the modal
+  function hideModal(target) {
+    $(target).fadeOut();
+  }
+
+  // Event handler for clicking "Learn More"
+  $('.learn-more-btn').on('click', function () {
+    var target = $(this).data('target');
+    showModal(target);
+  });
+
+  // Event handler for closing the modal
+  $(document).on('mouseup', function (event) {
+    var modal = $('.modal-container');
+    var modalBackdrop = $('.modal-backdrop');
+
+    // Check if the click is outside the modal
+    if (modalBackdrop.is(event.target)) {
+      hideModal(modal);
+    }
   });
 }

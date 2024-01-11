@@ -102,7 +102,7 @@
               "src": "url('../../fonts/InterTight-Regular.ttf') format('truetype')"
             },
             {
-              "fontFamily": "Inter TIght",
+              "fontFamily": "Inter Tight",
               "fontWeight": "600",
               "fontStyle": "normal",
               "src": "url('../../fonts/Inter-SemiBold.ttf') format('truetype')"
@@ -154,6 +154,10 @@
       "link": {
         "color": {
           "text": "#222222"
+        },
+        "typography": {
+          "textDecoration": "none",
+          "cursor": "pointer"
         }
       },
       "button": {

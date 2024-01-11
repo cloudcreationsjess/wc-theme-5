@@ -128,6 +128,11 @@
          *
          * @return array
          */
+        /**
+         * Data to be passed to the block before rendering.
+         *
+         * @return array
+         */
         public function with() {
             return [
                 'offset_data' => $this->offsetData(),
@@ -139,14 +144,32 @@
          *
          * @return array
          */
+        /**
+         * Return the offsetData().
+         *
+         * @return array
+         */
         public function offsetData() {
-            return [
-                'logo'       => get_field('logo'),
+            $offsetData = [
                 'title'      => get_field('title'),
-                'content'    => get_field('content'),
-                'button'     => get_field('button'),
+                'layout'     => get_field('layout'),
+                'content'    => [],
+                'logo'       => get_field('logo'),
                 'is_preview' => get_field('is_preview'),
+                'button'     => get_field('button'),
             ];
+
+            // Check the layout and populate content accordingly
+            if ( $offsetData['layout'] === 'one' ) {
+                $offsetData['content'] = get_field('one_column_text');
+            } else {
+                $offsetData['content'] = [
+                    'left_column'  => get_field('left_column'),
+                    'right_column' => get_field('right_column'),
+                ];
+            }
+
+            return $offsetData;
         }
 
         /**
@@ -158,9 +181,67 @@
             $offset = new FieldsBuilder('offset');
 
             $offset
-                ->addImage('logo', ['label' => 'Logo'])
                 ->addText('title', ['label' => 'Title'])
-                ->addWysiwyg('content', ['label' => 'Content'])
+                ->addButtonGroup('layout', [
+                    'label'   => 'Design',
+                    'default' => 'one', // Set default value to 'one
+                    'choices' => [
+                        'one' => 'One Column Text with Logo',
+                        'two' => 'Two Column Text',
+                    ],
+                ])
+                ->addImage('logo', [
+                    'label'             => 'Logo',
+                    'conditional_logic' => [
+                        [
+                            'field'    => 'layout',
+                            'operator' => '==',
+                            'value'    => 'one',
+                        ],
+                    ],
+                ])
+                ->addWysiwyg('one_column_text', [
+                    'label'             => 'Column',
+                    'media_upload'      => 0,
+                    'conditional_logic' => [
+                        [
+                            'field'    => 'layout',
+                            'operator' => '==',
+                            'value'    => 'one',
+                        ],
+                    ],
+                ])
+                ->addWysiwyg('left_column', [
+                    'label'             => 'Left Column',
+                    'media_upload'      => 0,
+                    'wrapper'           => [
+                        'width' => '50%',
+                        'class' => 'acf-seamless',
+                    ],
+                    'conditional_logic' => [
+                        [
+                            'field'    => 'layout',
+                            'operator' => '==',
+                            'value'    => 'two',
+                        ],
+                    ],
+                ])
+                ->addWysiwyg('right_column', [
+                    'label'             => 'Right Column',
+                    'media_upload'      => 0,
+                    'wrapper'           => [
+                        'width' => '50%',
+                        'class' => 'acf-seamless',
+
+                    ],
+                    'conditional_logic' => [
+                        [
+                            'field'    => 'layout',
+                            'operator' => '==',
+                            'value'    => 'two',
+                        ],
+                    ],
+                ])
                 ->addLink('button', ['label' => 'Button']);
 
             return $offset->build();

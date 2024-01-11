@@ -118,10 +118,10 @@
                     ],
                 ])
                 ->endRepeater()
-                ->addText('contact_form_title', [
+                ->addText('subscribe_form_title', [
                     'label' => 'Subscribe Form Title',
                 ])
-                ->addTextArea('contact_form_embed', [
+                ->addTextArea('subscribe_form_embed', [
                     'label' => 'Subscribe Embed Code',
                 ]);
 

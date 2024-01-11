@@ -17,7 +17,8 @@
 
             $content
                 ->addWysiwyg('content', [
-                    'label' => 'Content',
+                    'label'        => 'Content',
+                    'media_upload' => 0,
                 ]);
 
             return $content;

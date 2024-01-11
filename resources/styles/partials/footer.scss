@@ -43,6 +43,15 @@
           @include font-size(15);
           line-height: 25px;
           margin-bottom: 5px;
+          @include transition();
+          text-decoration: underline;
+          text-decoration-color: transparent;
+          text-underline-offset: 3px;
+
+          &:hover {
+            text-decoration-color: $lightest;
+
+          }
         }
 
         .footer-social-links {
@@ -56,6 +65,7 @@
             height: 18px;
             width: auto;
             margin-right: 20px;
+            @include transition();
 
             &:hover {
               filter: brightness(1.4);
@@ -63,6 +73,82 @@
 
           }
 
+        }
+      }
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .footer-title {
+        color: $light;
+        margin-bottom: 12px;
+        text-align: right;
+      }
+
+      .subscribe-form {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        label {
+          opacity: 0;
+          height: 0;
+        }
+
+        input {
+          padding: 9px 20px;
+          border-radius: 23px;
+          border: 1px solid $lightest;
+          background-color: $bright;
+          color: $lightest;
+          @include font-size(15);
+          line-height: 25px;
+          @include transition();
+          margin-right: 15px;
+          height: 45px;
+          margin-bottom: 0;
+
+          &::placeholder {
+            color: $lightest;
+            letter-spacing: 1.6px;
+            @include font-size(16);
+            font-weight: $medium;
+          }
+
+          &:focus {
+            outline: 0;
+            border-color: $lightest;
+            background-color: #FFFFFF0D;
+          }
+        }
+
+        .btn {
+          padding: 9px 38px;
+          height: 45px;
+          min-width: unset;
+        }
+
+      }
+
+      .copyright {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        @include font-size(14);
+        color: $mid;
+
+        a {
+          color: inherit;
+          text-decoration: $mid solid underline;
+          margin-left: 2px;
+          margin-right: 3px;
+          display: inline-block;
         }
       }
     }

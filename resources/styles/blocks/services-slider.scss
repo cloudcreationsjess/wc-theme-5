@@ -19,7 +19,11 @@
 
     .swiper {
       overflow: visible;
-      position: relative;
+      //overflow: hidden;
+      //padding-left: 10px;
+      //padding-top: 10px;
+      //position: relative;
+      //width: 91vw;
 
       &:before {
         content: '';
@@ -30,28 +34,6 @@
         height: 366px;
         background-color: $lightest;
         z-index: 1;
-      }
-
-      .scroll-bar {
-        height: 110px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-
-        .swiper-scrollbar {
-          height: 2px;
-          background-color: #CCCCC4;
-          width: 875px;
-          margin-right: auto;
-          position: relative;
-          left: 0;
-
-          .swiper-scrollbar-drag {
-            height: 2px;
-            background-color: $bright;
-          }
-        }
       }
 
       .swiper-wrapper {
@@ -101,6 +83,28 @@
               }
 
             }
+          }
+        }
+      }
+
+      .scroll-bar {
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .swiper-scrollbar {
+          height: 2px;
+          background-color: #CCCCC4;
+          width: 875px;
+          margin-right: auto;
+          position: relative;
+          left: 0;
+
+          .swiper-scrollbar-drag {
+            height: 2px;
+            background-color: $bright;
           }
         }
       }
