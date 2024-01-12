@@ -96,6 +96,10 @@
             'full_height'   => false,
             'anchor'        => false,
             'mode'          => true,
+            'color'         => [
+                'background' => true,
+                'text'       => false,
+            ],
             'multiple'      => true,
             'jsx'           => true,
         ];

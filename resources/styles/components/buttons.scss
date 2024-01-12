@@ -22,6 +22,7 @@
   @include transition();
   @include appearance();
   text-decoration: none;
+  cursor: pointer;
 
   a {
     color: inherit !important;
@@ -39,6 +40,7 @@
 .btn--outline, .btn--outline:visited {
   background-color: $lightest;
   color: $bright;
+  cursor: pointer;
 
   &:hover, &:active, &:not(:disabled):not(.disabled):active {
     background-color: $bright;
@@ -49,7 +51,7 @@
 }
 
 .btn--outline-light, .btn--outline-light:visited {
-  background-color: $bright;
+  background-color: transparent;
   color: $lightest;
   border: 1px solid $lightest;
 

@@ -50,8 +50,9 @@
                 ])
                 ->addImage('banner_logo',
                     [
-                        'label'   => 'Banner Logo',
-                        'wrapper' => [
+                        'label'         => 'Banner Logo',
+                        'return_format' => 'array',
+                        'wrapper'       => [
                             'width' => '50%', // Set the width to 50%
                             'class' => 'acf-seamless',
                             'id'    => '',
@@ -62,8 +63,9 @@
                     'label' => 'Footer',
                 ])
                 ->addImage('footer_logo', [
-                    'label'   => 'Footer Logo',
-                    'wrapper' => [
+                    'label'         => 'Footer Logo',
+                    'return_format' => 'array',
+                    'wrapper'       => [
                         'width' => '50%', // Set the width to 50%
                         'class' => 'acf-seamless',
                         'id'    => '',
@@ -110,8 +112,9 @@
                     ],
                 ])
                 ->addText('social_link', [
-                    'label'   => 'Social Link',
-                    'wrapper' => [
+                    'label'         => 'Social Link',
+                    'return_format' => 'array',
+                    'wrapper'       => [
                         'width' => '50%', // Set the width to 50%
                         'class' => 'acf-seamless',
                         'id'    => '',

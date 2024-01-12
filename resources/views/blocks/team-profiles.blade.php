@@ -29,7 +29,7 @@
             @endphp
             <li class="team-member">
               <div class="team-member__photo">
-                {!! the_image($photo, '', 'medium_large', 'medium_large') !!}
+                {!! the_image($photo, '', 'medium', 'medium') !!}
               </div>
               <div class="team-member__info">
                 <div class="team-member__info-header">
@@ -45,7 +45,8 @@
                 <div class="modal-backdrop"></div>
                 <div class="modal">
                   <div class="team-member__photo">
-                    {!! the_image($photo, '', 'medium_large', 'medium_large') !!}
+
+                    {!! the_image($photo, '', 'medium', 'medium') !!}
                   </div>
 
                   <div class="team-member__info">

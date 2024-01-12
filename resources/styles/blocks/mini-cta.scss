@@ -4,6 +4,7 @@
   padding-bottom: 38px;
   width: 100%;
   position: relative;
+  z-index: 1;
 
   .mini-container {
     display: flex;
@@ -18,6 +19,33 @@
 
     a {
       display: inline-block;
+    }
+  }
+
+  &.has-dark-background-color, &.has-darkest-background-color, &.has-bright-background-color {
+    .mini-container {
+      h3 {
+        color: $lightest;
+      }
+    }
+  }
+
+  &.has-light-background-color, &.has-lightest-background-color, &.has-mid-background-color {
+    .mini-container {
+      h3 {
+        color: $darkest;
+      }
+
+      a.btn.btn--primary, a.btn--primary-light, .btn--primary-light:visited {
+        color: $darkest;
+        border-color: $darkest;
+        background-color: transparent;
+
+        &:hover {
+          background-color: $bright;
+          color: $lightest;
+        }
+      }
     }
   }
 }

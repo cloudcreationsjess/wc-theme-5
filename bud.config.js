@@ -16,9 +16,14 @@ export default async (app) => {
   app.provide({
     jquery: ['jQuery', '$'],
   });
+
   app
-    .entry('app', ['@scripts/app', '@styles/app'])
-    .entry('editor', ['@scripts/editor', '@styles/editor'])
+    .entry('app', ['@styles/app', '@scripts/app'])
+    .entry('editor', [
+      '@scripts/editor',
+      '@scripts/deny-list-blocks',
+      '@styles/editor',
+    ])
     .assets(['images', 'fonts']);
 
   /**

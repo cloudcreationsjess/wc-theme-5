@@ -47,7 +47,7 @@
                   @if($services)
                     <span class="services">
                  @foreach($services as $key => $service)
-                        <div class="service h5">{!! $service->post_title !!}{!! (!$loop->last) ? ', ' : '' !!}</div>
+                        <div class="service h5">{!! get_the_title($service) !!}{!! (!$loop->last) ? ', ' : '' !!}</div>
                       @endforeach
                     </span>
                   @endif

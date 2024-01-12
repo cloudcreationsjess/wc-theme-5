@@ -5,16 +5,15 @@
 @else
 
   @php
-    $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'lightest';
+    $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'bright';
   @endphp
 
-  <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color">
-
-    @if($block_data['background_type'] == 'image' && $background_image)
-      {!! the_image($background_image, 'background-image', 'full', 'full') !!}
-    @endif
+  <div class="{{ $block->classes }} @if($block_data['background_type'] != 'image') has-{{ $backgroundColorClass }}-background-color @else has-image-background @endif"
+    @if($block_data['background_type'] == 'image') style="background-image: url('{{ $block_data['background_image']['url'] }}')" @endif
+  >
 
     <div class="mini-container">
+
       @if($block_data['title'])
         <h2 class="pullquote">{!! $block_data['title'] !!}</h2>
       @endif

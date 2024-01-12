@@ -36,7 +36,7 @@
             'description'         => __('Services offered by your site', 'text_domain'),
             'labels'              => $labels,
             'supports'            => ['title', 'editor', 'thumbnail', 'custom-fields'],
-            'taxonomies'          => ['category', 'post_tag'],
+            'taxonomies'          => [],
             'hierarchical'        => false,
             'public'              => true,
             'show_ui'             => true,

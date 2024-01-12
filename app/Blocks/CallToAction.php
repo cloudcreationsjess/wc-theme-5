@@ -143,7 +143,7 @@
             return [
                 'is_preview'       => get_field('is_preview'),
                 'background_type'  => get_field('background_choose'),
-                'background_image' => get_field('background_choose'),
+                'background_image' => get_field('background_image'),
                 'title'            => get_field('title'),
                 'button'           => get_field('button'),
                 'subtext'          => get_field('subtext'),

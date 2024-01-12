@@ -1,42 +1,30 @@
 .wp-block-hero {
-  min-height: calc(100vh - $header-height);
-
-
-  .background {
-    position: fixed;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
     left: 0;
-    top: $header-height;
-    min-height: 100vh;
-    height: 100%;
     width: 100%;
-    z-index: 0;
-
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #222222;
-      mix-blend-mode: hard-light;
-      opacity: 0.5;
-      z-index: 1; /* Adjust the z-index to ensure the overlay is above the image */
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    height: 100%;
+    background-color: $darkest-hover;
+    mix-blend-mode: hard-light;
   }
 
+
   .container {
+    height: 100%;
+    width: 100%;
 
 
     .hero-content {
-      padding-top: 48vh;
+      padding-top: 62vh;
       padding-bottom: 128px;
       display: flex;
       flex-direction: column;
@@ -64,6 +52,16 @@
 
       h1 {
         margin-bottom: 70px;
+      }
+    }
+  }
+}
+
+.home {
+  .wp-block-hero {
+    .container {
+      .hero-content {
+        padding-top: 75vh;
       }
     }
   }

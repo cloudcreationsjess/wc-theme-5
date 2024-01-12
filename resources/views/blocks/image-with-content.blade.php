@@ -15,7 +15,6 @@
       </div>
       <div class="text-container">
         @foreach($image_block_data['content_items'] as $item)
-
           @switch($item['layout'])
             @case('title')
               <h2>{!! $item['title'] !!}</h2>

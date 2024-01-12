@@ -7,7 +7,9 @@
     @if ($offset_data)
       <div class="container">
         @if ($offset_data['logo'])
-          {!! the_image($offset_data['logo'], 'logo', 'large', 'large') !!}
+          <div class="logo">
+            {!! the_image($offset_data['logo'], 'logo', 'full', 'full') !!}
+          </div>
         @endif
         <div class="offset-content">
           <h2>{{ $offset_data['title'] }}</h2>
@@ -32,7 +34,7 @@
               @endif
             </div>
             @if ($offset_data['button'])
-              <a href="{{ $offset_data['button']['url'] }}" target="{{$offset_data['button']['target']}}" class="btn btn-primary">{{ $offset_data['button']['title'] }}</a>
+              <a href="{{ $offset_data['button']['url'] }}" target="{{$offset_data['button']['target']}}" class="btn btn--outline">{{ $offset_data['button']['title'] }}</a>
             @endif
         </div>
       </div>
