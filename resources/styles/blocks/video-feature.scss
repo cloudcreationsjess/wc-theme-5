@@ -1,0 +1,27 @@
+.wp-block-video-feature {
+  width: 100%;
+  position: relative;
+  background-color: $mid;
+  padding: 100px 0;
+  z-index: 1;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .title {
+      margin-bottom: 60px;
+      max-width: 518px;
+    }
+
+    .wp-block-embed {
+      width: 100%;
+      max-width: 875px;
+    }
+  }
+
+
+}
