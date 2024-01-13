@@ -137,7 +137,40 @@
         public function blockData() {
             return [
                 'is_preview' => get_field('is_preview'),
+                'services'   => $this->getServices(),
+                'title'      => get_field('title'),
             ];
+        }
+
+        private function getServices() {
+
+            $services = [];
+
+            $args = [
+                'post_type'      => 'service',
+                'posts_per_page' => -1,
+            ];
+
+            $query = new \WP_Query($args);
+
+            while ( $query->have_posts() ) {
+                $query->the_post();
+
+                $excerpt = get_field('excerpt');
+
+                // Format and push project data to the $projects array
+                $services[] = [
+                    'name'           => get_the_title(),
+                    'id'             => get_the_id(),
+                    'excerpt'        => $excerpt,
+                    'learn_more_url' => get_permalink(),
+                ];
+            }
+
+            // Reset post data
+            wp_reset_postdata();
+
+            return $services;
         }
 
         /**

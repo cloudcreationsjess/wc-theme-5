@@ -4,6 +4,9 @@
   height: 70px;
   z-index: 9999;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: $light;
   @include transition();
   box-shadow: 0px 3px 10px #0000001A;

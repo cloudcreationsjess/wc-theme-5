@@ -179,7 +179,10 @@
                         ],
                     ],
                 ])
-                ->addText('title', ['label' => 'Title'])
+                ->addTextArea('title', [
+                    'label'     => 'Title',
+                    'new_lines' => 'br',
+                ])
                 ->addFields($this->get(Button::class))
                 ->addText('subtext', ['label' => 'Subtext']);
 

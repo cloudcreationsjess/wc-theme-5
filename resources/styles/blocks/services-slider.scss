@@ -38,11 +38,14 @@
       }
 
       .swiper-wrapper {
+        display: flex;
+        align-items: stretch;
 
 
         .swiper-slide {
           width: 608px !important;
           min-height: 366px;
+          align-self: stretch;
 
 
           .services-card {

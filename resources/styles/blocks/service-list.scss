@@ -1,0 +1,67 @@
+.wp-block-service-list {
+  width: 100%;
+  background-color: $light;
+  padding: 100px 0 50px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .title {
+      text-align: left;
+      align-self: flex-start;
+      margin-bottom: 60px;
+      max-width: 430px;
+    }
+
+    ul.service-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+
+      .service-item {
+        width: 430px;
+        height: auto;
+        border-bottom: 1px solid $darkest;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        &:nth-child(odd) {
+          margin-right: 16px;
+        }
+
+        header {
+          h3 {
+            margin-bottom: 10px;
+          }
+
+          .excerpt {
+            margin-top: 0;
+            margin-bottom: 30px;
+          }
+        }
+
+
+        a {
+          display: block;
+
+          button {
+            cursor: pointer;
+
+            p {
+              cursor: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}

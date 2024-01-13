@@ -95,13 +95,14 @@
   background-color: transparent;
   color: $bright;
   text-decoration: underline;
-  text-decoration-color: $lightest;
+  text-decoration-color: transparent;
   @include transition();
   font-weight: $semi-bold;
   font-family: $font-normal;
   @include font-size(16);
   letter-spacing: 1.6px;
   text-underline-offset: 3px;
+  cursor: pointer;
 
   &:hover, &:active, &:not(:disabled):not(.disabled):active {
     text-decoration-color: $bright;

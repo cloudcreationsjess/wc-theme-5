@@ -1,11 +1,11 @@
 .wp-block-hero {
   min-height: 100vh;
   background-attachment: fixed;
-  background-position: 50%;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -24,7 +24,7 @@
 
 
     .hero-content {
-      padding-top: 62vh;
+      padding-top: 54vh;
       padding-bottom: 128px;
       display: flex;
       flex-direction: column;
