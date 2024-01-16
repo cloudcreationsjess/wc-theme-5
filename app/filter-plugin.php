@@ -13,7 +13,13 @@
     add_filter('wpc_dropdown_default_option', 'change_wpc_default_option');
 
     function change_wpc_default_option($default_option) {
-        // Change the default option text to "Area of Service"
-        return 'Area of Service';
-    }
+        // Check if the current page is the posts page (blog)
+        if ( is_home() ) {
+            return 'Category';
+        }
 
+        // Check if the current page is the project page
+        if ( is_page_template('archive-project.blade.php') ) {
+            return 'Area of Service';
+        }
+    }

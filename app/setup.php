@@ -133,6 +133,11 @@
                 'name' => __('Project Header', 'sage'),
                 'id'   => 'sidebar-project-header',
             ] + $config);
+
+        register_sidebar([
+                'name' => __('Posts Header', 'sage'),
+                'id'   => 'post-archive-header',
+            ] + $config);
     });
 
 

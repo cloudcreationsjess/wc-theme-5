@@ -10,7 +10,6 @@ domReady(async () => {
   servicesSlide();
   accordion();
   modalPop();
-  // blockAllow();
   selectChange();
 });
 

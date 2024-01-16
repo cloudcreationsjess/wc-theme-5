@@ -287,6 +287,11 @@ export default async (app) => {
         },
       },
       blocks: {
+        'core/list': {
+          supports: {
+            align: true,
+          },
+        },
         'core/button': {
           variations: {
             outline: {

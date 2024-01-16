@@ -146,3 +146,4 @@
     // }
     // add_filter( 'get_the_archive_title', 'be_archive_title_remove_prefix' );
 
+    add_filter('wpcf7_autop_or_not', '__return_false');

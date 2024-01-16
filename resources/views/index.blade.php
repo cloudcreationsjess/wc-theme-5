@@ -2,22 +2,20 @@
 
 @section('content')
   @include('partials.page-header')
+  <div class="container">
+    @php(dynamic_sidebar('post-archive-header'))
 
-  @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, no results were found.', 'sage') !!}
-    </x-alert>
+    @if (have_posts())
+      <ul class="blog-posts-container">
 
-    {!! get_search_form(false) !!}
+        @while(have_posts())
+          @php(the_post())
+          @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
+        @endwhile
+      </ul>
+
+      {!! get_the_posts_navigation() !!}
+  </div>
   @endif
-
-  @while(have_posts()) @php(the_post())
-    @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-  @endwhile
-
-  {!! get_the_posts_navigation() !!}
 @endsection
 
-@section('sidebar')
-  @include('sections.sidebar')
-@endsection

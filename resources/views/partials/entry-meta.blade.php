@@ -1,10 +1,16 @@
-<time class="dt-published" datetime="{{ get_post_time('c', true) }}">
-  {{ get_the_date() }}
-</time>
+<div class="entry-meta">
+  <time class="dt-published h2" datetime="{{ get_post_time('c', true) }}">
+    {{ get_post_time('m-d-y') }} |&nbsp;
+  </time>
 
-<p>
-  <span>{{ __('By', 'sage') }}</span>
-  <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" class="p-author h-card">
-    {{ get_the_author() }}
-  </a>
-</p>
+  @php
+    $categories = get_the_category();
+    $category = $categories[0];
+  @endphp
+  <div class="h2 category">
+    {!! $category->name !!}
+  </div>
+</div>
+
+
+

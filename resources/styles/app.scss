@@ -9,11 +9,13 @@
 @import "core/global.scss";
 @import "core/resets.scss";
 @import "core/typography.scss";
+@import "core/single.scss";
 
 // COMPONENTS ===================================\
 
 @import "components/buttons.scss";
 @import "components/project-card.scss";
+@import "components/filter.scss";
 
 // BLOCKS ===================================\
 @import "blocks/example.scss";
@@ -29,11 +31,16 @@
 @import "blocks/process-list.scss";
 @import "blocks/video-feature.scss";
 @import "blocks/service-list.scss";
+@import "blocks/tiled-gallery.scss";
+@import "blocks/text-hero.scss";
+@import "blocks/contact-block.scss";
 
 // PARTIALS ===================================\
 @import "partials/header.scss";
 @import "partials/footer.scss";
+@import "partials/blog-card.scss";
 
 // PAGE TEMPLATES ===================================\
 
 @import "pages/archive-project.scss";
+@import "pages/archive-posts.scss";

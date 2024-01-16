@@ -58,7 +58,7 @@
         'setup',
         'filters',
         'login-logo',
-        // 'wordpress-cleanup',
+        'wordpress-cleanup',
         'custom-post-type',
         'image-helper',
         'dashboard-mods',
