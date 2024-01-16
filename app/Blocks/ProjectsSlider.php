@@ -152,7 +152,7 @@
             return get_field('title');
         }
 
-        private function getProjects() {
+        public function getProjects() {
             // Add logic to retrieve and format your project data here
             // You can use WP_Query or any other method to get your project data
             $projects = [];

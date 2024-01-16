@@ -25,6 +25,7 @@
                 ->addRelationship('services_relationship', [
                     'label'         => 'Services Used',
                     'post_type'     => ['service'],
+                    'return_format' => 'object',
                     'filters'       => [
                         [
                             'param'    => 'post_type',
@@ -32,7 +33,7 @@
                             'value'    => 'service',
                         ],
                     ],
-                    'return_format' => 'post_object',
+
                 ]);
 
             return $project->build();

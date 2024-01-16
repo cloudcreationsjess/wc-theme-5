@@ -1,5 +1,7 @@
 @import 'node_modules/swiper/swiper.scss';
 @import 'node_modules/swiper/modules/scrollbar.scss';
+@import 'node_modules/select2/src/scss/core.scss';
+
 // MAIN THEME FILES ===================================\
 
 @import "core/variables.scss";
@@ -11,6 +13,7 @@
 // COMPONENTS ===================================\
 
 @import "components/buttons.scss";
+@import "components/project-card.scss";
 
 // BLOCKS ===================================\
 @import "blocks/example.scss";
@@ -31,3 +34,6 @@
 @import "partials/header.scss";
 @import "partials/footer.scss";
 
+// PAGE TEMPLATES ===================================\
+
+@import "pages/archive-project.scss";

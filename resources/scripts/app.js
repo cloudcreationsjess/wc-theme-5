@@ -1,5 +1,6 @@
 import domReady from '@roots/sage/client/dom-ready';
 import Swiper from 'swiper/bundle';
+import 'select2';
 
 /**
  * Application entrypoint
@@ -9,7 +10,8 @@ domReady(async () => {
   servicesSlide();
   accordion();
   modalPop();
-  blockAllow();
+  // blockAllow();
+  selectChange();
 });
 
 /**
@@ -97,9 +99,35 @@ function modalPop() {
   });
 }
 
-const allowedEmbedBlocks = ['vimeo', 'youtube'];
-wp.blocks.getBlockVariations('core/embed').forEach(function (blockVariation) {
-  if (-1 === allowedEmbedBlocks.indexOf(blockVariation.name)) {
-    wp.blocks.unregisterBlockVariation('core/embed', blockVariation.name);
-  }
-});
+// function blockAllow() {
+//   const allowedEmbedBlocks = ['vimeo', 'youtube'];
+//   wp.blocks.getBlockVariations('core/embed').forEach(function (blockVariation) {
+//     if (-1 === allowedEmbedBlocks.indexOf(blockVariation.name)) {
+//       wp.blocks.unregisterBlockVariation('core/embed', blockVariation.name);
+//     }
+//   });
+// }
+
+function selectChange() {
+  $('b[role="presentation"]').hide();
+  $('.select2-selection__arrow').append(
+    '<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">\n' +
+      '  <defs>\n' +
+      '    <style>\n' +
+      '      .cls-1 {\n' +
+      '      fill: none;\n' +
+      '      stroke: #000;\n' +
+      '      stroke-linecap: round;\n' +
+      '      stroke-linejoin: round;\n' +
+      '      }\n' +
+      '    </style>\n' +
+      '  </defs>\n' +
+      '  <g id="Layer_1-2" data-name="Layer 1">\n' +
+      '    <g id="Icon_feather-plus" data-name="Icon feather-plus">\n' +
+      '      <path id="Path_54" data-name="Path 54" class="cls-1" d="m11,.5v21"/>\n' +
+      '      <path id="Path_55" data-name="Path 55" class="cls-1" d="m.5,11h21"/>\n' +
+      '    </g>\n' +
+      '  </g>\n' +
+      '</svg>\n',
+  );
+}

@@ -88,7 +88,7 @@
             'description'         => __('Projects for your site', 'text_domain'),
             'labels'              => $labels,
             'supports'            => ['title', 'editor', 'thumbnail', 'custom-fields'],
-            'taxonomies'          => ['category', 'post_tag'],
+            'taxonomies'          => ['post_tag'],
             'hierarchical'        => false,
             'public'              => true,
             'show_ui'             => true,
