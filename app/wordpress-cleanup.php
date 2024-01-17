@@ -44,6 +44,12 @@
 
         $allowed_classes = [
             'singular',
+            'blog',
+            'single-post',
+            'single-project',
+            'single-service',
+            'single',
+            'page-template-archive-project',
             'single',
             'page',
             'archive',

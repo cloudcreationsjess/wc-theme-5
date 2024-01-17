@@ -11,6 +11,7 @@ domReady(async () => {
   accordion();
   modalPop();
   selectChange();
+  customizeGallery();
 });
 
 /**
@@ -129,4 +130,54 @@ function selectChange() {
       '  </g>\n' +
       '</svg>\n',
   );
+}
+
+function customizeGallery() {
+  // Function to calculate position based on the pattern
+  function calculatePosition(index) {
+    let columnSpan = 1;
+    let rowSpan = 1;
+
+    // Reset pattern after the 12th item
+    if (index >= 12) {
+      index = index % 12;
+    }
+
+    if (index === 0 || index === 9) {
+      rowSpan = 2;
+      columnSpan = 1;
+    } else if (index === 5) {
+      columnSpan = 2;
+      rowSpan = 2;
+    } else if (index === 6) {
+      rowSpan = 2;
+      columnSpan = 1;
+    }
+
+    return { columnSpan, rowSpan };
+  }
+
+  // Function to add styles to the gallery block
+  function customizeGalleryBlock() {
+    // Target the core/gallery block
+    const galleryBlocks = document.querySelectorAll('.wp-block-gallery');
+
+    // Loop through each gallery block
+    galleryBlocks.forEach((galleryBlock) => {
+      // Get the images in the gallery block
+      const images = galleryBlock.querySelectorAll('.wp-block-image');
+
+      // Loop through each image and apply custom styles
+      images.forEach((image, index) => {
+        const { columnSpan, rowSpan } = calculatePosition(index);
+
+        // Apply custom styles to each image
+        image.style.gridColumn = `span ${columnSpan}`;
+        image.style.gridRow = `span ${rowSpan}`;
+        image.classList.add(`gallery-item-${index}`);
+      });
+    });
+  }
+
+  customizeGalleryBlock();
 }

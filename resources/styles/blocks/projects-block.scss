@@ -53,28 +53,6 @@
             }
 
 
-            .tags {
-              display: flex;
-              flex-direction: row;
-              position: absolute;
-              top: 20px;
-              left: 20px;
-
-              .tag {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 10px 28px;
-                max-height: 35px;
-                color: $lightest;
-                @include font-size(14);
-                border-radius: 21px;
-                border: 1px solid $lightest;
-                background-color: #FFFFFF26;
-                margin-right: 10px;
-              }
-            }
           }
 
           header {

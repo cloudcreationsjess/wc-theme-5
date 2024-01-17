@@ -168,7 +168,7 @@
          */
         public function enqueue() {
             wp_enqueue_style(
-                'dummytitle',
+                'mini-cta',
                 get_template_directory_uri() . '/resources/styles/blocks/mini-cta.scss', // Adjust the path to your compiled CSS file
 
             );

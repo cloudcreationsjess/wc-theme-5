@@ -1,0 +1,38 @@
+.single-project {
+  padding-top: 135px;
+
+  .page-header {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 80px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .post-meta {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+
+    .tags {
+      position: relative;
+      top: unset;
+      left: unset;
+
+      .tag {
+        border-color: $darkest;
+        color: $darkest;
+      }
+    }
+
+  }
+
+
+}

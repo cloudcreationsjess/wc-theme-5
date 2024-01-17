@@ -1,10 +1,23 @@
-<article @php(post_class('h-entry'))>
+<article {!! post_class('h-entry') !!}>
+
   @include('partials.page-header')
-  @include('partials.entry-meta')
+
   <div class="e-content mini-container">
-    @php(the_content())
+    {!! the_content() !!}
   </div>
 
-  {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
+  <nav class="post-navigation container">
+    @if(get_previous_post_link())
+      <div class="nav-previous">
+        <x-arrow/>{!! get_previous_post_link('%link', __('Previous Post', 'sage')) !!}
+      </div>
+    @endif
+    @if(get_next_post_link())
+      <div class="nav-next">
+        {!! get_next_post_link('%link', __('Next Post ', 'sage')) !!}
+        <x-arrow/>
+      </div>
+    @endif
+  </nav>
 
 </article>

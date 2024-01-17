@@ -20,9 +20,9 @@ export default async (app) => {
   app
     .entry('app', ['@styles/app', '@scripts/app'])
     .entry('editor', [
+      '@styles/editor',
       '@scripts/editor',
       '@scripts/deny-list-blocks',
-      '@styles/editor',
     ])
     .assets(['images', 'fonts']);
 

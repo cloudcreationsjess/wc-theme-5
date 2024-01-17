@@ -1,5 +1,4 @@
 .wp-block-tiled-gallery {
-  margin-bottom: 100px;
 
   .gallery-grid {
     display: grid;
@@ -24,4 +23,33 @@
     }
   }
 
+}
+
+.wp-block-gallery {
+  max-width: 1053px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 227px;
+  gap: 16px;
+
+  .wp-block-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image) {
+  width: unset;
 }

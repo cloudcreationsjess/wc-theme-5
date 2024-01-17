@@ -213,7 +213,7 @@
          */
         public function enqueue() {
             wp_enqueue_style(
-                'dummytitle',
+                'projects-block',
                 get_template_directory_uri() . '/resources/styles/blocks/projects-block.scss', // Adjust the path to your compiled CSS file
 
             );

@@ -87,6 +87,35 @@
         p, h2, h1, h3, h4, h5, h6 {
           margin-bottom: 0;
         }
+
+        ul {
+          margin-left: 20px;
+          margin-top: 30px;
+
+
+          li {
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 10px;
+            @include font-size(16);
+            line-height: 30px;
+            font-weight: $medium;
+
+            &:before {
+              content: '';
+              height: 11px;
+              width: 16px;
+              position: absolute;
+              left: 0;
+              top: 10px;
+              display: inline-block;
+              background-image: url('../../views/components/check.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
+            }
+          }
+        }
       }
 
       .accordion {

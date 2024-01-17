@@ -2,24 +2,25 @@
 
     namespace App\Blocks;
 
+    use App\Fields\Partials\ListItems;
     use Log1x\AcfComposer\Block;
     use StoutLogic\AcfBuilder\FieldsBuilder;
 
-    class ContactBlock extends Block
+    class ProjectOverview extends Block
     {
         /**
          * The block name.
          *
          * @var string
          */
-        public $name = 'Contact Block';
+        public $name = 'Project Overview';
 
         /**
          * The block description.
          *
          * @var string
          */
-        public $description = 'A simple Contact Block block.';
+        public $description = 'A simple Project Overview block.';
 
         /**
          * The block category.
@@ -137,38 +138,44 @@
         public function blockData() {
             return [
                 'is_preview'       => get_field('is_preview'),
-                'title'            => get_field('title'),
-                'subtitle'         => get_field('subtitle'),
-                'background_image' => get_field('background_image'),
-                'contact_info'     => $this->getContactInfo(),
-                'contact_form'     => $this->getContactForm(),
+                'project_overview' => $this->getProjectOverview(),
+                'project_details'  => $this->getProjectDetails(),
             ];
         }
 
         /**
-         * Helper function to get contact info.
+         * Helper function to get project overview data.
          *
          * @return array
          */
-        private function getContactInfo() {
+        private function getProjectOverview() {
             return [
-                'phone'   => get_field('contact_info')['phone'],
-                'email'   => get_field('contact_info')['email'],
-                'address' => get_field('contact_info')['address'],
-                'map'     => get_field('contact_info')['google_map'],
+                'project_title'       => get_field('project_overview.project_title'),
+                'project_description' => get_field('project_overview.project_description'),
             ];
         }
 
         /**
-         * Helper function to get contact form data.
+         * Helper function to get project details data.
          *
          * @return array
          */
-        private function getContactForm() {
+        private function getProjectDetails() {
             return [
-                'form_title'     => get_field('contact_form')['form_title'],
-                'form_shortcode' => get_field('contact_form')['form_shortcode'],
+                'title'       => get_field('project_details.title'),
+                'description' => get_field('project_details.description'),
+                'list_items'  => $this->getListItems(),
             ];
+        }
+
+        /**
+         * Helper function to get list items data.
+         *
+         * @return array
+         */
+        private function getListItems() {
+            // Assuming ListItems class is a valid field group or partial that handles list items
+            return $this->get(ListItems::class);
         }
 
         /**
@@ -177,30 +184,22 @@
          * @return array
          */
         public function fields() {
-            $contactBlock = new FieldsBuilder('contact_block');
+            $projectOverview = new FieldsBuilder('project_overview');
 
-            $contactBlock
-                ->addText('title', ['label' => 'Title'])
-                ->addText('subtitle', ['label' => 'Subtitle'])
-                ->addImage('background_image', ['label' => 'Background Image'])
-                ->addGroup('contact_info', ['label' => 'Contact Info'])
-                ->addText('phone', ['label' => 'Phone'])
-                ->addText('email', ['label' => 'Email'])
-                ->addText('address', [
-                    'label'   => 'Address',
-                    'wrapper' => ['width' => '50%'],
-                ])
-                ->addText('google_map', [
-                    'label'   => 'Link to Google Map',
-                    'wrapper' => ['width' => '50%'],
+            $projectOverview
+                ->addGroup('Project Overview', ['label' => 'Project Overview'])
+                ->addText('project_title', ['label' => 'Title'])
+                ->addWysiwyg('project_description', [
+                    'label'        => 'Project Description',
+                    'media_upload' => 0,
                 ])
                 ->endGroup()
-                ->addGroup('contact_form', ['label' => 'Contact Form'])
-                ->addText('form_title', ['label' => 'Form Title'])
-                ->addText('form_shortcode', ['label' => 'Form ShortCode'])
+                ->addGroup('Project Details', ['label' => 'Project Details'])
+                ->addText('title', ['label' => 'Title'])
+                ->addFields($this->get(ListItems::class))
                 ->endGroup();
 
-            return $contactBlock->build();
+            return $projectOverview->build();
         }
 
         /**
@@ -210,8 +209,8 @@
          */
         public function enqueue() {
             wp_enqueue_style(
-                'contact-block',
-                get_template_directory_uri() . '/resources/styles/blocks/contact-block.scss', // Adjust the path to your compiled CSS file
+                'project-overview',
+                get_template_directory_uri() . '/resources/styles/blocks/project-overview.scss', // Adjust the path to your compiled CSS file
 
             );
         }
