@@ -16,21 +16,21 @@
     </div>
     <div class="swiper">
       <div class="swiper-wrapper">
-
-        @foreach($projects as $project)
-          @php
-            $services = get_field('services_relationship', $project['id']);
-          @endphp
-          <div class="swiper-slide">
-            @include('partials.project-card')
-          </div>
-        @endforeach
+        @if($projects)
+          @foreach($projects as $project)
+            @php
+              $services = get_field('services_relationship', $project['id']);
+            @endphp
+            <div class="swiper-slide">
+              @include('partials.project-card')
+            </div>
+          @endforeach
+        @endif
       </div>
       <!-- Add Pagination -->
       <div class="scroll-bar">
         <div class="swiper-scrollbar"></div>
       </div>
-
     </div>
   </div>
 

@@ -11,7 +11,6 @@ domReady(async () => {
   accordion();
   modalPop();
   selectChange();
-  customizeGallery();
 });
 
 /**
@@ -87,13 +86,19 @@ function modalPop() {
     showModal(target);
   });
 
+  $('.modal-close').on('click', function () {
+    var modal = $('.modal-container');
+    hideModal(modal);
+  });
+
   // Event handler for closing the modal
   $(document).on('mouseup', function (event) {
     var modal = $('.modal-container');
     var modalBackdrop = $('.modal-backdrop');
+    var modalClose = $('.modal-close');
 
     // Check if the click is outside the modal
-    if (modalBackdrop.is(event.target)) {
+    if (modalBackdrop.is(event.target) || modalClose.is(event.target)) {
       hideModal(modal);
     }
   });
@@ -131,6 +136,11 @@ function selectChange() {
       '</svg>\n',
   );
 }
+
+//load when document ready
+jQuery(document).ready(function ($) {
+  customizeGallery();
+});
 
 function customizeGallery() {
   // Function to calculate position based on the pattern

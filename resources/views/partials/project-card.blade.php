@@ -15,7 +15,9 @@
               </span>
   <header>
                 <span class="header-content">
-                  <h3>{{ $project['name'] }}</h3>
+                  @if($project['name'])
+                    <h3>{{ $project['name'] }}</h3>
+                  @endif
                   @if($project['locations'])
                     @foreach($project['locations'] as $location)
                       <p class="h4 location"> {{ $location->name }}</p>
@@ -26,7 +28,7 @@
                   @endif
                   @if($services)
                     <span class="services">
-                 @foreach($services as $key => $service)
+                      @foreach($services as $key => $service)
                         <div class="service h5">{!! get_the_title($service) !!}{!! (!$loop->last) ? ', ' : '' !!}</div>
                       @endforeach
                     </span>

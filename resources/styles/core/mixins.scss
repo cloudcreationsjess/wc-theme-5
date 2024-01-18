@@ -224,7 +224,7 @@ breakpoints
       @content ;
     }
   } @else if $point == tablet {
-    @media (max-width: 1023.9px) {
+    @media (max-width: 1096.9px) {
       @content ;
     }
   } @else if $point == mobile {

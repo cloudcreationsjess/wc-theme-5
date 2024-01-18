@@ -145,6 +145,13 @@
             }
           }
 
+          .accordion-header[aria-expanded="true"] {
+            svg {
+              transform: rotate(45deg);
+            }
+
+          }
+
 
           button {
             background-color: transparent;
@@ -172,9 +179,10 @@
             }
 
             svg {
-              height: 21px;
-              width: 21px;
+              height: 47px;
+              width: 47px;
               margin-left: 33px;
+              @include transition();
             }
           }
         }

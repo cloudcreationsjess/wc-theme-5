@@ -1,11 +1,5 @@
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.80002 17.798">
   <defs>
-    <style>
-      .cls-1 {
-        fill: #c0c0b6;
-        stroke-width: 0px;
-      }
-    </style>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
     <g id="LinkedIn">

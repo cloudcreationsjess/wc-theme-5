@@ -28,14 +28,22 @@
               $social = get_field('social_link', $teamMember->ID);
             @endphp
             <li class="team-member">
-              <div class="team-member__photo">
-                {!! the_image($photo, '', 'medium', 'medium') !!}
-              </div>
+              @if($photo)
+                <div class="team-member__photo">
+                  {!! the_image($photo, '', 'medium', 'medium') !!}
+                </div>
+              @endif
               <div class="team-member__info">
                 <div class="team-member__info-header">
-                  <h3 class="h4 team-member__name">{{ $fname }}</h3>
-                  <h3 class="h4 team-member__name">{{ $lname }}</h3>
-                  <p class="team-member__job-title">{{ $jobTitle }}</p>
+                  @if($fname)
+                    <h3 class="h4 team-member__name">{{ $fname }}</h3>
+                  @endif
+                  @if($lname)
+                    <h3 class="h4 team-member__name">{{ $lname }}</h3>
+                  @endif
+                  @if($jobTitle)
+                    <p class="team-member__job-title">{{ $jobTitle }}</p>
+                  @endif
                 </div>
                 <x-learn-more class="learn-more-btn" target="#modal-{{ $teamMember->ID }}"/>
               </div>
@@ -44,21 +52,32 @@
               <div id="modal-{{ $teamMember->ID }}" class="modal-container">
                 <div class="modal-backdrop"></div>
                 <div class="modal">
-                  <div class="team-member__photo">
-
-                    {!! the_image($photo, '', 'medium', 'medium') !!}
-                  </div>
+                  @if($photo)
+                    <div class="team-member__photo">
+                      {!! the_image($photo, '', 'medium', 'medium') !!}
+                    </div>
+                  @endif
 
                   <div class="team-member__info">
                     <div class="team-member__info-header">
-                      <h3 class="h4 team-member__name">{{ $fname }}</h3>
-                      <h3 class="h4 team-member__name">{{ $lname }}</h3>
-                      <p class="team-member__job-title">{{ $jobTitle }}</p>
-                      <p class="bio">{!! $bio !!}</p>
+                      @if($fname)
+                        <h3 class="h4 team-member__name">{{ $fname }}</h3>
+                      @endif
+                      @if($lname)
+                        <h3 class="h4 team-member__name">{{ $lname }}</h3>
+                      @endif
+                      @if($jobTitle)
+                        <p class="team-member__job-title">{{ $jobTitle }}</p>
+                      @endif
+                      @if($bio)
+                        <div class="bio">{!! $bio !!}</div>
+                      @endif
                     </div>
-                    <a href="{!! $social !!}">
-                      <x-linkedin/>
-                    </a>
+                    @if($social)
+                      <a href="{!! $social !!}">
+                        <x-linkedin/>
+                      </a>
+                    @endif
                   </div>
                   <button type="button" class="modal-close">
                     <x-close/>

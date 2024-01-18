@@ -84,7 +84,7 @@ h3, .h3 {
 
 h4, .h4 {
   @include font-size(20);
-  line-height: 1.25;
+  line-height: 25px;
   font-family: $font-heading;
   color: $bright;
   letter-spacing: 0;
@@ -120,7 +120,7 @@ h5, .h5 {
 /***********************************************************************/
 p, .p {
   @include font-size(16);
-  line-height: 1.875;
+  line-height: 30px;
   font-family: $font-text;
   color: $darkest;
   font-weight: $regular;

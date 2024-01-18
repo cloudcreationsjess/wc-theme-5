@@ -1,6 +1,6 @@
 @if($block_data['is_preview'])
   <figure>
-    <img src="{{ get_stylesheet_directory_uri() }}/resources/views/blocks/previews/WCBlock.png" alt="Preview Image" style="width:100%; height:auto;">
+    <img src="{{ get_stylesheet_directory_uri() }}/resources/views/blocks/previews/featured-blogs.png" alt="Preview Image" style="width:100%; height:auto;">
   </figure>
 @else
   @php

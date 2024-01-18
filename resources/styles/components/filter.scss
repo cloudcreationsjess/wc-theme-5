@@ -42,7 +42,7 @@
 
   &:after {
     content: '';
-    background-image: url('../../views/components/Plus.svg');
+    background-image: url('../../views/components/plus-thin.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -87,3 +87,10 @@
   width: 519px !important;
 }
 
+.wpc-filter-layout-dropdown .select2-container--default .select2-selection--single .select2-selection__rendered, .wpc-sorting-form .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding: 6px 20px;
+}
+
+.sidebar .widget .wpc-filter-everything-dropdown li.select2-results__option, .wpc-filter-everything-dropdown .select2-results__option {
+  padding: 10px 20px;
+}

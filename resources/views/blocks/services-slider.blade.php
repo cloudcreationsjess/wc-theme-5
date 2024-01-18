@@ -21,18 +21,22 @@
 
       <div class="swiper services-slider">
         <div class="swiper-wrapper">
-          @foreach ($block_data['services'] as $service)
-            @php
-              $excerpt = get_field('excerpt', $service['id']);
-            @endphp
-            <div class="swiper-slide">
-              <a href="{{ $service['learn_more_url'] }}" class="services-card">
-                <h3>{{ $service['name'] }}</h3>
-                <p class="excerpt">{{ $excerpt }}</p>
-                <x-learn-more/>
-              </a>
-            </div>
-          @endforeach
+          @if($block_data['services'])
+            @foreach ($block_data['services'] as $service)
+              @php
+                $excerpt = get_field('excerpt', $service['id']) ?? null;
+              @endphp
+              <div class="swiper-slide">
+                <a href="{{ $service['learn_more_url'] }}" class="services-card">
+                  <h3>{{ $service['name'] }}</h3>
+                  @if($excerpt)
+                    <p class="excerpt">{{ $excerpt }}</p>
+                  @endif
+                  <x-learn-more/>
+                </a>
+              </div>
+            @endforeach
+          @endif
         </div>
         <div class="scroll-bar">
           <div class="swiper-scrollbar"></div>

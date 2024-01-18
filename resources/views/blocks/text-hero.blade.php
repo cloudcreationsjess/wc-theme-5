@@ -6,8 +6,12 @@
 
   <div class="{{ $block->classes }}">
     <div class="container">
-      <h1>{!! $block_data['title'] !!}</h1>
-      <h2>{!! $block_data['subtitle'] !!}</h2>
+      @if($block_data['title'])
+        <h1>{!! $block_data['title'] !!}</h1>
+      @endif
+      @if($block_data['subtitle'])
+        <h2>{!! $block_data['subtitle'] !!}</h2>
+      @endif
     </div>
   </div>
 

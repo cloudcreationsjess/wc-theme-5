@@ -12,6 +12,12 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    .left-column {
+      h2 {
+        margin-bottom: 40px;
+      }
+    }
+
     .logo {
       position: absolute;
       bottom: 0;
@@ -35,6 +41,7 @@
       border-left: 1px solid $darkest;
       padding-left: 50px;
       margin-left: 55px;
+
 
       .process-item {
         position: relative;

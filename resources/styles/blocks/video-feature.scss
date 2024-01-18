@@ -19,7 +19,14 @@
 
     .wp-block-embed {
       width: 100%;
+
+    }
+
+    figure {
       max-width: 875px;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
     }
   }
 

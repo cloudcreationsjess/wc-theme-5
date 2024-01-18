@@ -6,11 +6,11 @@
 
   <div class="{{ $block->classes }} container">
     <div class="overview-container">
-      @if($block_data['project_overview']['project_title'])
-        <h2>{{ $block_data['project_overview']['project_title'] }}</h2>
+      @if($block_data['project_overview']['title'])
+        <h2>{!! $block_data['project_overview']['title'] !!}</h2>
       @endif
-      @if($block_data['project_overview']['project_description'])
-        <p>{{ $block_data['project_overview']['project_description'] }}</p>
+      @if($block_data['project_overview']['description'])
+        {!! $block_data['project_overview']['description'] !!}
       @endif
     </div>
     <div class="list-container">
@@ -19,8 +19,10 @@
       @endif
       @if($block_data['project_details']['list_items'])
         <ul class="check-list">
-          @foreach ($block_data['project_details']['list_items'] as $list_item)
-            <li>{{ $list_item['items'] }}</li>
+          @foreach ($block_data['project_details']['list_items'] as $item)
+            @if($item['item'])
+              <li>{{ $item['item'] }}</li>
+            @endif
           @endforeach
         </ul>
       @endif

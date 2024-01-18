@@ -162,8 +162,8 @@
 
           &:focus, &:active {
             border-color: $bright;
-            border-width: 1.5px;
-            outline: 1.5px solid $bright;
+            border-width: 1px;
+            outline: 1px solid $bright;
           }
 
           &::placeholder {

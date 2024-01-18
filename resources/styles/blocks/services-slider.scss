@@ -97,18 +97,21 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        margin-top: 2px;
 
         .swiper-scrollbar {
-          height: 2px;
+          height: 1px;
           background-color: #CCCCC4;
           width: 875px;
           margin-right: auto;
           position: relative;
           left: 0;
+          top: 0;
 
           .swiper-scrollbar-drag {
-            height: 2px;
+            height: 3px;
             background-color: $bright;
+            top: -1px;
           }
         }
       }

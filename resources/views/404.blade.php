@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
 
   @if (! have_posts())
-    <x-alert type="warning">
-      {!! __('Sorry, but the page you are trying to view does not exist.', 'sage') !!}
-    </x-alert>
+    <div class="container full-height">
+      <h1 class="h2"> Sorry! That page cannot be found</h1>
+      <h2 class="h3">
+        It looks like nothing was found at this location.</h2>
+      <a href="" class="btn btn--outline">Return to Home</a>
 
-    {!! get_search_form(false) !!}
+    </div>
+
   @endif
 @endsection

@@ -2,8 +2,6 @@
   <defs>
     <style>
       .cls-1 {
-        fill: none;
-        stroke: #000;
         stroke-linecap: round;
         stroke-linejoin: round;
       }

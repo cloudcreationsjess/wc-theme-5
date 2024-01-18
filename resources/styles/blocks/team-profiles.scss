@@ -15,6 +15,10 @@
       display: inline-block;
     }
 
+    .team-block-title {
+      margin-bottom: 20px;
+    }
+
     .team-block-subtitle {
       margin-bottom: 60px;
       max-width: 696px;
@@ -56,7 +60,7 @@
           flex-direction: column;
           justify-content: flex-start;
           align-items: stretch;
-          padding: 20px 15px;
+          padding: 20px 15px 15px 15px;
 
           .team-member__info-header {
             flex: 1;
@@ -68,17 +72,25 @@
 
             .team-member__job-title {
               margin-top: 10px;
+
             }
           }
 
-          .cta .btn--text {
-            text-decoration-color: $light;
+          button.cta {
+            margin-bottom: 0;
+            line-height: 1;
 
-            &:hover {
-              text-decoration-color: $darkest;
-              cursor: pointer;
+            .btn--text {
+              text-decoration-color: $light;
+
+              &:hover {
+                text-decoration-color: $darkest;
+                cursor: pointer;
+              }
             }
           }
+
+
         }
 
         .modal-container {
@@ -111,7 +123,7 @@
             min-height: 414px;
             background-color: $light;
             transform: translate(-50%, -50%);
-            padding: 50px 30px;
+            padding: 50px 36px 50px 30px;
             box-shadow: 0px 3px 10px #00000029;
             display: flex;
             flex-direction: row;
@@ -121,20 +133,29 @@
 
             .modal-close {
               position: absolute;
-              right: 0;
-              top: 0;
+              right: 14px;
+              top: 44px;
+              background: transparent;
+              border: none;
+              cursor: pointer;
+              height: 30px;
+              width: 30px;
 
               svg {
-                height: 30px;
-                width: 30px;
+                height: 14px;
+                width: 14px;
+                stroke: $darkest;
               }
             }
 
 
             .team-member__photo {
+              min-width: 227px;
+              min-height: 220px;
+              margin-right: 30px;
+              overflow: hidden;
               width: 227px;
               height: 220px;
-              margin-right: 30px;
 
               img {
                 width: 100%;
@@ -146,19 +167,65 @@
             }
 
             .team-member__info {
-              padding: 0;
-              padding-right: 56px;
               width: 100%;
+              padding: 0;
+
+              .team-member__info-header {
+
+                p {
+                  @include font-size(16);
+                  line-height: 30px;
+                  font-weight: $regular;
+                }
+
+                .team-member__job-title {
+                  margin-bottom: 0;
+                }
+              }
+
+              .bio {
+                max-height: 60vh;
+                overflow-y: auto;
+                padding-right: 20px;
+                box-sizing: content-box;
+
+                p {
+                  margin-top: 5px;
+                }
+
+                /* width */
+                &::-webkit-scrollbar {
+                  width: 5px;
+                  box-shadow: none;
+                  margin-left: 20px;
+                }
+
+                /* Track */
+                &::-webkit-scrollbar-track {
+                  background-color: transparent;
+                  box-shadow: none;
+                  margin-left: 20px;
+                }
+
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                  background: $mid;
+                  border-radius: 15px;
+                  box-shadow: none;
+                }
+              }
+
 
               a {
-                height: 18px;
-                width: 18px;
+                height: 24px;
+                width: 24px;
 
                 svg {
-                  height: 18px;
+                  height: 24px;
                   width: auto;
                   margin-right: 20px;
                   @include transition();
+                  fill: $mid;
 
                   &:hover {
                     filter: brightness(0.8);

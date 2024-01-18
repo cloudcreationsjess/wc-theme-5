@@ -8,8 +8,10 @@
   .container {
     padding-left: 178px;
     padding-top: 100px;
-    padding-bottom: 142px;
+    padding-bottom: 140px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     .logo {
       position: absolute;
@@ -24,6 +26,14 @@
         width: 100%;
         object-fit: contain;
       }
+    }
+
+    h2 {
+      max-width: 608px;
+    }
+
+    .btn {
+      align-self: flex-start;
     }
 
     .offset-content {
@@ -51,6 +61,7 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: flex-start;
+        margin-bottom: 40px;
 
         .left-column, .right-column {
           width: 430px;
@@ -72,10 +83,6 @@
 
 
         }
-      }
-
-      .btn {
-        align-self: flex-end;
       }
 
 

@@ -12,7 +12,9 @@
         @endif
       </div>
       <div class="left-column">
-        <h2>{{ $block_data['title'] }}</h2>
+        @if($block_data['title'])
+          <h2>{{ $block_data['title'] }}</h2>
+        @endif
         @if ($block_data['button'])
           <a href="{{ $block_data['button']['url'] }}" class="btn btn--{{ $block_data['button_type'] }}">
             {{ $block_data['button']['title'] }}
@@ -24,8 +26,12 @@
         <ul class="process-list">
           @foreach ($block_data['process_list'] as $process)
             <li class="process-item">
-              <h3 class="process-item__title">{!! $process['title'] !!}</h3>
-              {!! $process['description'] !!}
+              @if($process['title'])
+                <h3 class="process-item__title">{!! $process['title'] !!}</h3>
+              @endif
+              @if($process['description'])
+                {!! $process['description'] !!}
+              @endif
             </li>
           @endforeach
         </ul>

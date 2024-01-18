@@ -150,8 +150,8 @@
          */
         private function getProjectOverview() {
             return [
-                'project_title'       => get_field('project_overview.project_title'),
-                'project_description' => get_field('project_overview.project_description'),
+                'title'       => get_field('overview')['project_title'],
+                'description' => get_field('overview')['project_description'],
             ];
         }
 
@@ -162,20 +162,9 @@
          */
         private function getProjectDetails() {
             return [
-                'title'       => get_field('project_details.title'),
-                'description' => get_field('project_details.description'),
-                'list_items'  => $this->getListItems(),
+                'title'      => get_field('project_details')['title'],
+                'list_items' => get_field('project_details')['items'],
             ];
-        }
-
-        /**
-         * Helper function to get list items data.
-         *
-         * @return array
-         */
-        private function getListItems() {
-            // Assuming ListItems class is a valid field group or partial that handles list items
-            return $this->get(ListItems::class);
         }
 
         /**
@@ -187,14 +176,14 @@
             $projectOverview = new FieldsBuilder('project_overview');
 
             $projectOverview
-                ->addGroup('Project Overview', ['label' => 'Project Overview'])
+                ->addGroup('overview', ['label' => 'Project Overview'])
                 ->addText('project_title', ['label' => 'Title'])
                 ->addWysiwyg('project_description', [
                     'label'        => 'Project Description',
                     'media_upload' => 0,
                 ])
                 ->endGroup()
-                ->addGroup('Project Details', ['label' => 'Project Details'])
+                ->addGroup('project_details', ['label' => 'Project Details'])
                 ->addText('title', ['label' => 'Title'])
                 ->addFields($this->get(ListItems::class))
                 ->endGroup();

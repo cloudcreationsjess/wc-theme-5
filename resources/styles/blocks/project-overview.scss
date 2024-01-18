@@ -4,15 +4,45 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  margin-bottom: 60px;
 
   .overview-container {
     width: 54%;
+    padding-right: 54px;
   }
 
   .list-container {
     width: 46%;
     border-left: 1px solid $darkest;
     padding: 0 50px;
+
+    ul {
+      margin-top: 30px;
+
+
+      li {
+        position: relative;
+        padding-left: 36px;
+        margin-bottom: 10px;
+        @include font-size(16);
+        line-height: 30px;
+        font-weight: $medium;
+
+        &:before {
+          content: '';
+          height: 11px;
+          width: 16px;
+          position: absolute;
+          left: 0;
+          top: 10px;
+          display: inline-block;
+          background-image: url('../../views/components/check.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+    }
   }
 
 

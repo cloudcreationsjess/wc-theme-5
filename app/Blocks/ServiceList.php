@@ -182,7 +182,12 @@
             $serviceList = new FieldsBuilder('service_list');
 
             $serviceList
-                ->addText('title', ['label' => 'Title']);
+                ->addText('title', ['label' => 'Title'])
+                ->addMessage('message', 'message', [
+                    'label'   => 'Instructions',
+                    'message' => 'This block will display all services. To add a service, go to Services > Add New.',
+
+                ]);
 
             return $serviceList->build();
         }

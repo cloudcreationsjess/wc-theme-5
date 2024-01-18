@@ -1,7 +1,11 @@
+<a class="sr-only" href="#main">
+  {{ __('Skip to content') }}
+</a>
+
 <header class="banner" id="header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
   <div class="header-container">
     @php
-      $logo = get_field('banner_logo', 'options')
+      $logo = get_field('banner_logo', 'options');
     @endphp
     @if($logo)
       <a class="header__site-branding header__left" href="{{ esc_url(home_url('/')) }}"
@@ -20,12 +24,10 @@
 
       @if(get_field('button', 'options'))
         @php
-          $btn = get_field('button', 'options')
+          $btn = get_field('button', 'options');
         @endphp
         <a class="btn btn--primary" href="{{ $btn['url'] }}" tabindex="0">{!! $btn['title'] !!}</a>
       @endif
     </div>
-
   </div>
-
 </header>

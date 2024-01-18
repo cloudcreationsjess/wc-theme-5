@@ -81,7 +81,11 @@
                     </g>
                   </g>
                 </svg>
-                <a href="{{$contact['map']}}" target="_blank">{{ $contact['address'] }}</a>
+                @if($contact['map'])
+                  <a href="{{$contact['map']}}" target="_blank">{!! $contact['address'] !!}</a>
+                @else
+                  {!! $contact['address'] !!}
+                @endif
               </div>
             @endif
 

@@ -4,11 +4,15 @@
   </figure>
 @else
 
-  <div class="{{ $block->classes }}" style="background-image: url('{!! $hero_data['background_image']['url'] !!}')">
+  <div class="{{ $block->classes }}" @if($hero_data['background_image'])style="background-image: url('{!! $hero_data['background_image']['url'] !!}')" @endif>
     <div class="container">
       <div class="hero-content">
-        <h1>{{ $hero_data['title'] }}</h1>
-        <h2>{{ $hero_data['subheading'] }}</h2>
+        @if($hero_data['title'])
+          <h1>{{ $hero_data['title'] }}</h1>
+        @endif
+        @if($hero_data['subheading'])
+          <h2>{{ $hero_data['subheading'] }}</h2>
+        @endif
       </div>
     </div>
   </div>

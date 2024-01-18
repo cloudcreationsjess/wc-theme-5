@@ -19,7 +19,7 @@
          *
          * @var string
          */
-        public $description = 'A simple Video block with a title and .';
+        public $description = 'A simple Video block with a title and video embed';
 
         /**
          * The block category.
