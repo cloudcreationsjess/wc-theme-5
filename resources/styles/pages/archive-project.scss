@@ -26,6 +26,12 @@
     height: 100%;
     position: relative;
 
+    .project-card {
+      @include b(tablet) {
+        margin-right: 0;
+      }
+    }
+
 
     .logo {
       position: absolute;
@@ -33,6 +39,10 @@
       right: 0;
       height: 175px;
       width: 248px;
+
+      @include b(mobile) {
+        display: none;
+      }
 
 
       img {

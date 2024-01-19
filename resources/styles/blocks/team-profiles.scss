@@ -28,22 +28,60 @@
       display: flex;
       flex-wrap: wrap;
 
+      @include b(tablet) {
+        width: calc(500px + 14px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include b(mobile) {
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      @include b(tiny) {
+        flex-direction: column;
+        width: 100%;
+      }
+
       .team-member {
         display: flex;
         flex-direction: row;
         width: calc(50% - 7px);
-        height: 244px;
+        min-height: 244px;
         margin-bottom: 40px;
         border-bottom: 1px solid $darkest;
+        @include b(tablet) {
+          width: calc(50% - 14px);
+          flex-direction: column;
+          align-items: flex-start;
+          border-left: 1px solid $darkest;
+          border-bottom: none;
+        }
+
+        @include b(tiny) {
+          width: 100%;
+          max-width: 250px;
+        }
+
 
         &:nth-child(odd) {
           margin-right: 14px;
+
+          @include b(tiny) {
+            margin-right: 0;
+          }
         }
 
         .team-member__photo {
           width: 48%;
           height: 100%;
           overflow: hidden;
+
+          @include b(tablet) {
+            width: 100%;
+          }
 
           img {
             width: 100%;
@@ -72,6 +110,10 @@
 
             .team-member__job-title {
               margin-top: 10px;
+
+              @include b(mobile) {
+                margin-bottom: 100px;
+              }
 
             }
           }
@@ -118,7 +160,8 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            width: 697px;
+            max-width: 697px;
+            width: 100%;
             height: auto;
             min-height: 414px;
             background-color: $light;
@@ -130,6 +173,14 @@
             align-items: flex-start;
             justify-content: flex-start;
             z-index: 99999;
+
+            @include b(mobile) {
+              flex-direction: column;
+              max-width: calc(100% - 50px);
+              margin-left: auto;
+              margin-right: auto;
+              padding: 20px;
+            }
 
             .modal-close {
               position: absolute;
@@ -156,6 +207,10 @@
               overflow: hidden;
               width: 227px;
               height: 220px;
+
+              @include b(mobile) {
+                margin-bottom: 20px;
+              }
 
               img {
                 width: 100%;
@@ -188,6 +243,23 @@
                 overflow-y: auto;
                 padding-right: 20px;
                 box-sizing: content-box;
+
+                @include b(mobile) {
+                  max-height: 40vh;
+
+                  ::-webkit-scrollbar {
+                    display: block; /* Safari and Chrome */
+                    scrollbar-width: unset; /* firefox */
+                    -ms-overflow-style: unset; /* IE 10+ */
+                  }
+
+                  &::-webkit-scrollbar-thumb {
+                    background: $mid;
+                    border-radius: 15px;
+                    box-shadow: none;
+                  }
+
+                }
 
                 p {
                   margin-top: 5px;

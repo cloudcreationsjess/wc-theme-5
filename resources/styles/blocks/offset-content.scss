@@ -13,6 +13,14 @@
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 901px) {
+      padding-bottom: 0;
+    }
+
+    @include b(mobile) {
+      padding-left: 50px;
+    }
+
     .logo {
       position: absolute;
       right: 0;
@@ -21,10 +29,35 @@
       height: 262px;
       z-index: 4;
 
+      @include b(laptop) {
+        right: 80px;
+      }
+
+      @include b(tablet) {
+        right: 0;
+        transform: translateX(10%);
+      }
+
+      @media (max-width: 901px) {
+        position: relative;
+        width: 100%;
+        transform: none;
+
+      }
+
       img {
         height: 100%;
         width: 100%;
         object-fit: contain;
+
+        @media (max-width: 901px) {
+
+          position: absolute;
+          right: 0;
+          transform: translateX(31%);
+          width: auto;
+
+        }
       }
     }
 
@@ -34,6 +67,11 @@
 
     .btn {
       align-self: flex-start;
+
+      @include b(mobile) {
+        width: 100%;
+        max-width: 319px;
+      }
     }
 
     .offset-content {
@@ -63,8 +101,14 @@
         justify-content: flex-start;
         margin-bottom: 40px;
 
+        @include b(mobile) {
+          flex-direction: column;
+
+        }
+
         .left-column, .right-column {
-          width: 430px;
+          max-width: 430px;
+          width: 100%;
 
           p {
             margin-bottom: 0;
@@ -74,12 +118,17 @@
 
         .left-column {
           margin-right: 15px;
+
+          @include b(mobile) {
+            margin-bottom: 30px;
+          }
         }
 
         .right-column {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          margin-right: 15px;
 
 
         }

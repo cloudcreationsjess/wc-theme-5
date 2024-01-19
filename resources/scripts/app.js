@@ -8,9 +8,11 @@ import 'select2';
 domReady(async () => {
   projectsSlide();
   servicesSlide();
+  featuredSlide();
   accordion();
   modalPop();
   selectChange();
+  mobilePopout();
 });
 
 /**
@@ -21,11 +23,22 @@ if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);
 function projectsSlide() {
   // Initialize Swiper
   const swiper = new Swiper('.swiper', {
+    freeMode: true,
     slidesPerView: 'auto',
     spaceBetween: 15,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 25,
+      },
+      768: {
+        slidesPerView: 'auto',
+        spaceBetween: 15,
+      },
     },
   });
 }
@@ -33,6 +46,34 @@ function projectsSlide() {
 function servicesSlide() {
   // Initialize Swiper
   const swiper2 = new Swiper('.services-slider', {
+    freeMode: true,
+    slidesPerView: 'auto',
+    spaceBetween: 15,
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+    },
+
+    breakpoints: {
+      0: {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+      },
+      768: {
+        slidesPerView: 'auto',
+        centeredSlides: false,
+      },
+    },
+  });
+}
+
+function featuredSlide() {
+  // Initialize Swiper
+  const swiper3 = new Swiper('.swiper-featured-posts', {
+    freeMode: true,
+    centeredSlides: true,
+    initialSlide: 1,
+    // centeredSlidesBounds: true,
     slidesPerView: 'auto',
     spaceBetween: 15,
     scrollbar: {
@@ -190,4 +231,48 @@ function customizeGallery() {
   }
 
   customizeGalleryBlock();
+}
+
+function mobilePopout() {
+  $(document).ready(function () {
+    // Check if #nav-btn and #popout elements exist
+    var $navBtn = $('#nav-btn');
+    var $popout = $('#popout');
+
+    if ($navBtn.length && $popout.length) {
+      // Hide the menu initially
+      $popout.hide();
+
+      // Initialize the menu state
+      var menuVisible = false;
+
+      // Function to toggle menu visibility
+      function toggleMenu() {
+        // Toggle the visibility of the menu
+        if (menuVisible) {
+          // Fade out the menu
+          $popout.fadeOut('fast').removeClass('is-active');
+          $navBtn.removeClass('is-active');
+          $('body').removeClass('is-active');
+        } else {
+          // Fade in the menu
+          $popout.fadeIn('fast').addClass('is-active');
+          $navBtn.addClass('is-active');
+          $('body').addClass('is-active');
+        }
+
+        // Update the menu state
+        menuVisible = !menuVisible;
+      }
+
+      // Handle click on #nav-btn
+      $navBtn.click(toggleMenu);
+
+      // Handle click on menu item with children
+      $('.menu-item-has-children svg').on('click', function () {
+        // Toggle the is-active class for the parent
+        $(this).parent().toggleClass('is-active');
+      });
+    }
+  });
 }

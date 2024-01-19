@@ -29,5 +29,15 @@
         <a class="btn btn--primary" href="{{ $btn['url'] }}" tabindex="0">{!! $btn['title'] !!}</a>
       @endif
     </div>
+    <div class="header_mobile__right">
+
+      <button type="button" id="nav-btn" class="js__popout-toggle"
+        aria-label="Open Menu" aria-haspopup="menu" aria-expanded="false" tabindex="0">
+      </button>
+
+    </div>
   </div>
+
+  <x-mobile-menu/>
+
 </header>

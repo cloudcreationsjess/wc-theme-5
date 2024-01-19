@@ -220,11 +220,11 @@ breakpoints
       @content ;
     }
   } @else if $point == laptop {
-    @media (max-width: 1350.9px) {
+    @media (max-width: 1279.9px) {
       @content ;
     }
   } @else if $point == tablet {
-    @media (max-width: 1096.9px) {
+    @media (max-width: 1134.9px) {
       @content ;
     }
   } @else if $point == mobile {

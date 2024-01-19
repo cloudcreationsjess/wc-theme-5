@@ -33,6 +33,10 @@
       height: 100%;
       width: 100%;
 
+      @include b(tablet) {
+        display: none;
+      }
+
       .btn--secondary {
         margin-left: 10px;
       }
@@ -177,14 +181,213 @@
   }
 
   .header__site-branding {
-    width: 198px;
-    height: 100%;
+    max-width: 198px;
+    height: auto;
     display: flex;
     align-items: center;
 
+    @include b(tablet) {
+      max-width: 176px;
+      min-width: 176px;
+      height: auto;
+    }
+
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-position: center;
+      object-fit: contain;
+    }
+  }
+
+
+}
+
+//MOBILE MENU
+
+#header {
+
+  .header_mobile__right {
+    display: none;
+    height: 20px;
+    width: 27px;
+    @include b(tablet) {
+      display: flex;
+    }
+
+    button#nav-btn {
+      width: 27px;
+      height: 20px;
+      border-top: 1px solid $darkest;
+      border-bottom: 1px solid $darkest;
+      border-left: none;
+      border-right: none;
+      display: block;
+      position: relative;
+      @include transition();
+      cursor: pointer;
+
+      &:before, &:after {
+        content: '';
+        width: 27px;
+        height: 1px;
+        background-color: $darkest;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include transition();
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &.is-active {
+        border-color: transparent;
+
+        &:before {
+          transform: translate(0, -50%) rotate(45deg);
+        }
+
+        &:after {
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+      }
+
+
+    }
+  }
+
+  #popout {
+    background-color: $light;
+    width: 100%;
+    min-height: calc(100vh - $header-height);
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 60px;
+    overflow-y: auto;
+    text-align: center;
+    margin-top: -1px;
+
+
+    @include b(tablet) {
+      display: flex;
+      //transform: translateY(-200%);
+
+
+    }
+
+    .btn {
+      width: 340px;
+      height: 45px;
+      transition: none;
+    }
+
+    #mobile-menu {
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      li.menu-item {
+        @include font-size(25);
+        line-height: 32px;
+        font-weight: $medium;
+        margin-bottom: 40px;
+
+      }
+
+      .menu-item-has-children {
+        cursor: pointer;
+
+        svg {
+          transition: none;
+          transform: rotate(-90deg);
+          margin-bottom: -4px;
+        }
+
+        ul.sub-menu {
+          height: 0;
+          opacity: 0;
+
+
+          li {
+            visibility: hidden;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+
+        }
+
+
+        &.is-active {
+
+          svg {
+            transform: rotate(90deg);
+          }
+
+          ul.sub-menu {
+            height: auto;
+            opacity: 1;
+            padding-top: 40px;
+
+            li {
+              visibility: visible;
+            }
+          }
+        }
+      }
+
+    }
+
+    //when popout is active include transitions on inner items so they dont animate when fade out
+    &.is-active {
+
+      .btn {
+        @include transition();
+      }
+
+      #mobile-menu {
+
+
+        .menu-item-has-children {
+
+          svg {
+            @include transition();
+          }
+
+          ul.sub-menu {
+            @include transition();
+          }
+
+        }
+      }
+
+    }
+
+
+  }
+
+
+}
+
+body {
+
+  @include b(tablet) {
+    &.is-active {
+      position: fixed;
+      overflow: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+      scrollbar-width: none; /* firefox */
+      -ms-overflow-style: none; /* IE 10+ */
     }
   }
 

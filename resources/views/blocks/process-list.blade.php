@@ -6,11 +6,6 @@
 
   <div class="{{ $block->classes }}">
     <div class="container">
-      <div class="logo">
-        @if($block_data['logo'])
-          {!! the_image($block_data['logo'], '', 'medium', 'medium') !!}
-        @endif
-      </div>
       <div class="left-column">
         @if($block_data['title'])
           <h2>{{ $block_data['title'] }}</h2>
@@ -36,6 +31,11 @@
           @endforeach
         </ul>
       @endif
+      <div class="logo">
+        @if($block_data['logo'])
+          {!! the_image($block_data['logo'], '', 'medium', 'medium') !!}
+        @endif
+      </div>
     </div>
   </div>
 

@@ -6,11 +6,7 @@
   <div class="{{ $block->classes }}">
     @if ($offset_data)
       <div class="container" @if ($offset_data['layout'] === 'two')style="padding-bottom:100px"@endif>
-        @if ($offset_data['logo'])
-          <div class="logo">
-            {!! the_image($offset_data['logo'], 'logo', 'full', 'full') !!}
-          </div>
-        @endif
+
         <div class="offset-content">
           <h2>{{ $offset_data['title'] }}</h2>
 
@@ -39,6 +35,11 @@
         </div>
         @if ($offset_data['button'])
           <a href="{{ $offset_data['button']['url'] }}" target="{{$offset_data['button']['target']}}" class="btn btn--outline" @if ($offset_data['layout'] === 'two')style="align-self:flex-end"@endif>{{ $offset_data['button']['title'] }}</a>
+        @endif
+        @if ($offset_data['logo'])
+          <div class="logo">
+            {!! the_image($offset_data['logo'], 'logo', 'full', 'full') !!}
+          </div>
         @endif
       </div>
     @endif

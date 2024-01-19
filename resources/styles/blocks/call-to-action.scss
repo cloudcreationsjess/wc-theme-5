@@ -7,6 +7,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  @include b(mobile) {
+    padding: 130px 0;
+  }
+
   &.has-image-background {
     &:after {
       content: '';

@@ -5,20 +5,47 @@
   display: flex;
   align-items: center;
 
+  @include b(laptop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include b(mobile) {
+    padding: 100px 0;
+  }
+
 
   &.is-style-left {
     .container {
       flex-direction: row-reverse;
 
+      @include b(mobile) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
       .text-container {
         margin-left: auto;
         margin-right: unset;
+        margin-bottom: 0;
+
+        @include b(mobile) {
+          margin-bottom: 60px;
+        }
+
 
       }
 
       .image-container {
         left: 20px;
         margin-left: 0;
+
+        @include b(mobile) {
+          left: unset;
+          margin-left: 0;
+
+        }
       }
     }
   }
@@ -32,12 +59,36 @@
       &:after {
         content: '';
         position: absolute;
-        bottom: -230px;
+        bottom: -215px;
         left: 0;
         width: 1.2px;
         height: 251px;
         background-color: $darkest;
         z-index: 3;
+
+      }
+
+      @include b(mobile) {
+        padding-bottom: 60px;
+      }
+
+
+    }
+
+    .image-container {
+      @include b(mobile) {
+        margin-bottom: 20px;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -210px;
+          left: 0;
+          width: 1px;
+          height: 173px;
+          background-color: $darkest;
+          z-index: 3;
+        }
+
       }
     }
 
@@ -50,6 +101,24 @@
         right: 0;
       }
     }
+
+    .image-container {
+      @include b(mobile) {
+        margin-bottom: 20px;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -200px;
+          left: unset;
+          right: 0;
+          width: 1px;
+          height: 173px;
+          background-color: $darkest;
+          z-index: 3;
+        }
+
+      }
+    }
   }
 
   .container {
@@ -60,6 +129,12 @@
     height: 100%;
     justify-content: space-between;
 
+    @include b(mobile) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
     .image-container {
 
       width: 525px;
@@ -68,6 +143,19 @@
       position: absolute;
       right: 20px;
       top: 30px;
+
+      @include b(laptop) {
+        width: 40vw;
+      }
+
+      @include b(mobile) {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+        right: unset;
+        top: unset;
+        height: 437px;
+      }
 
       img {
         width: 100%;
@@ -81,6 +169,17 @@
       max-width: 520px;
       margin-right: auto;
 
+      @include b(laptop) {
+        width: 40vw;
+      }
+
+      @include b(mobile) {
+        width: 100%;
+        margin-right: unset;
+        max-width: 560px;
+        margin-bottom: 60px;
+      }
+
       .content {
         margin-bottom: 40px;
 
@@ -92,6 +191,10 @@
           margin-left: 20px;
           margin-top: 30px;
 
+          @include b(mobile) {
+            margin-left: 0;
+          }
+
 
           li {
             position: relative;
@@ -99,7 +202,7 @@
             margin-bottom: 10px;
             @include font-size(16);
             line-height: 30px;
-            font-weight: $medium;
+            font-weight: 500;
 
             &:before {
               content: '';
@@ -121,10 +224,16 @@
       .accordion {
         margin-bottom: 30px;
 
+
         .accordion-item {
           border-bottom: 1px solid $darkest;
           background-color: transparent;
           padding: 20px;
+
+          @include b(mobile) {
+            padding: 20px 10px;
+            padding-right: 0;
+          }
 
           &:first-of-type {
             border-top: 1px solid $darkest;
@@ -174,15 +283,34 @@
             text-decoration-thickness: 1px;
             @include transition();
 
+
             &:hover {
               text-decoration-color: $bright;
             }
 
-            svg {
-              height: 47px;
-              width: 47px;
+            .plus-svg {
+              min-height: 47px;
+              min-width: 47px;
               margin-left: 33px;
               @include transition();
+
+              svg {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+              }
+
+              @include b(tablet) {
+                margin-left: 10px;
+              }
+
+              @include b(mobile) {
+                margin-left: 0;
+                height: 20px;
+                width: 20px;
+                min-height: 40px;
+                min-width: 40px;
+              }
             }
           }
         }

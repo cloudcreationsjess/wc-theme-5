@@ -59,7 +59,9 @@
       </div>
 
       <div class="copyright">
-        Copyright {{ date('Y') }} <a href="https://whitecanvasdesign.ca/">White Canvas Design Inc.</a> |
+        <span class="copyright-text"> Copyright {{ date('Y') }} <a href="https://whitecanvasdesign.ca/">White Canvas Design Inc.</a></span>
+
+        <span class="h-divide">|</span>
 
         @php
           $menu_name = 'Footer Menu';

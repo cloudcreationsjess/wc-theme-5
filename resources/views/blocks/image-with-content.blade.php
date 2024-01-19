@@ -12,7 +12,7 @@
     <div class="container">
       @if($image_block_data['image'])
         <div class="image-container">
-          {!! the_image($image_block_data['image']) !!}
+          {!! the_image($image_block_data['image'], '', 'large', 'large') !!}
         </div>
       @endif
       <div class="text-container">
@@ -39,7 +39,9 @@
                         @if($accordion_item['accordion_title'])
                           <button id="heading{{ $index }}" class="accordion-header" role="tab" aria-controls="panel{{ $index }}" aria-expanded="false">
                             {{ $accordion_item['accordion_title'] }}
+                            <span class="plus-svg">
                             <x-plus/>
+                              </span>
                           </button>
                         @endif
                         @if($accordion_item['accordion_content'])

@@ -1,5 +1,14 @@
 
 .single {
+
+  .e-content {
+    @include b(mobile) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+  }
+
   .post-navigation {
     padding-top: 100px;
     padding-bottom: 100px;

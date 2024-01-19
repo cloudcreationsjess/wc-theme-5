@@ -5,6 +5,7 @@
   color: $lightest;
   z-index: 2;
 
+
   .container {
     padding: 60px 0;
     display: flex;
@@ -12,11 +13,35 @@
     align-items: center;
     justify-content: space-between;
 
+    @include b(laptop) {
+      padding: 60px 113px;
+    }
+
+    @media (max-width: 1156px) {
+      align-items: flex-start;
+    }
+
+    @include b(tablet) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+
     .footer-left {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       justify-content: flex-start;
+
+      @include b(tablet) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 0;
+      }
 
       .footer-logo {
         width: auto;
@@ -24,10 +49,14 @@
         margin-right: 50px;
         height: 34px;
 
+        @include b(tablet) {
+          margin-bottom: 60px;
+          margin-right: 0;
+        }
+
         img {
           height: 100%;
-          width: auto;
-          max-height: 34px;
+          width: 100%;
           object-fit: contain;
         }
       }
@@ -39,6 +68,11 @@
         justify-content: flex-start;
         color: $lightest;
 
+        @include b(tablet) {
+          align-items: center;
+          justify-content: center;
+        }
+
         a {
           color: inherit;
           @include font-size(15);
@@ -48,6 +82,10 @@
           text-decoration: underline;
           text-decoration-color: transparent;
           text-underline-offset: 3px;
+
+          @include b(tablet) {
+            margin-bottom: 15px;
+          }
 
           &:hover {
             text-decoration-color: $lightest;
@@ -61,11 +99,34 @@
           align-items: center;
           justify-content: flex-start;
           margin-top: 16px;
+          height: 20px;
+
+          @include b(tablet) {
+            align-items: center;
+            justify-content: center;
+          }
+
+          a {
+            margin-right: 20px;
+            height: 100%;
+            width: 100%;
+            margin-bottom: 0;
+
+            @include b(mobile) {
+              margin-right: 30px;
+              margin-bottom: 0;
+            }
+
+            &:last-of-type {
+              margin-right: 0;
+            }
+          }
 
           img {
-            height: 18px;
-            width: auto;
-            margin-right: 20px;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
             @include transition();
 
             &:hover {
@@ -73,6 +134,7 @@
             }
 
           }
+
 
         }
       }
@@ -83,10 +145,20 @@
       flex-direction: column;
       align-items: flex-end;
 
+      @include b(tablet) {
+        align-items: center;
+        justify-content: center;
+      }
+
       .footer-title {
         color: $light;
         margin-bottom: 12px;
         text-align: right;
+
+        @include b(tablet) {
+          text-align: center;
+          margin-bottom: 20px;
+        }
       }
 
       .subscribe-form {
@@ -95,6 +167,18 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+
+        @media (max-width: 1156px) {
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+
+        @include b(tablet) {
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 40px;
+        }
 
         label {
           opacity: 0;
@@ -113,6 +197,11 @@
           margin-right: 15px;
           height: 45px;
           margin-bottom: 0;
+
+          @media (max-width: 1156px) {
+            margin-right: 0;
+            margin-bottom: 15px;
+          }
 
           &::placeholder {
             color: $lightest;
@@ -144,12 +233,28 @@
         @include font-size(14);
         color: $mid;
 
+        @include b(tiny) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
         a {
           color: inherit;
           text-decoration: $mid solid underline;
           margin-left: 2px;
           margin-right: 3px;
           display: inline-block;
+
+          @include b(mobile) {
+            text-decoration: none;
+          }
+        }
+
+        .h-divide {
+          @include b(tiny) {
+            display: none;
+          }
         }
       }
     }

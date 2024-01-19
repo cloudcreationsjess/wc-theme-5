@@ -39,6 +39,12 @@
       top: 20px;
       left: 20px;
 
+      @include b(mobile) {
+        flex-wrap: wrap;
+        flex-direction: unset;
+      }
+
+
       .tag {
         display: flex;
         flex-direction: column;
@@ -52,6 +58,11 @@
         border: 1px solid $lightest;
         background-color: #FFFFFF26;
         margin-right: 10px;
+
+        @include b(mobile) {
+          margin-bottom: 8px;
+        }
+
       }
     }
   }

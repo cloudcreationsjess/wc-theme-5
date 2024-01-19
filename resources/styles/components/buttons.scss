@@ -29,6 +29,11 @@
     text-decoration: inherit !important;
   }
 
+  @include b(mobile) {
+    width: 100%;
+    max-width: 340px;
+  }
+
 
   &:hover, &:active, &:not(:disabled):not(.disabled):active {
     outline: 0;

@@ -5,6 +5,10 @@
   padding: 100px 0;
   z-index: 1;
 
+  @include b(mobile) {
+    padding: 90px 0;
+  }
+
   .container {
     display: flex;
     flex-direction: column;

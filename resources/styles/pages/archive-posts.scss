@@ -19,8 +19,37 @@
       width: calc(33.33% - 11px);
       margin-right: 16px;
 
+      @media(max-width: 1024px) {
+        width: calc(50% - 8px);
+      }
+
+      @media(max-width: 625px) {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      &:nth-child(2n) {
+
+        @media(max-width: 1024px) {
+          margin-right: 0;
+        }
+
+        @media(max-width: 625px) {
+          margin-right: 0;
+        }
+      }
+
+
       &:nth-child(3n) {
         margin-right: 0;
+
+        @media(max-width: 1024px) {
+          margin-right: 16px;
+        }
+
+        @media(max-width: 625px) {
+          margin-right: 0;
+        }
       }
     }
   }

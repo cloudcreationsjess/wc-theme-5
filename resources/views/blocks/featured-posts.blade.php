@@ -7,7 +7,7 @@
     $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'lightest';
   @endphp
 
-  <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color">
+  <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color @if($block_data['style_settings'] === 'logo') has-logo @endif">
     <div class="container">
       @if ($block_data['style_settings'] === 'logo' && $block_data['logo'])
         {!! the_image($block_data['logo'], 'logo', 'medium', 'medium') !!}
@@ -19,6 +19,18 @@
             @include('partials.blog-card')
           @endforeach
         </ul>
+        <div class="swiper-featured-posts">
+          <div class="swiper-wrapper">
+            @foreach ($block_data['featured_posts'] as $post)
+              <div class="swiper-slide">
+                @include('partials.blog-card')
+              </div>
+            @endforeach
+          </div>
+          <div class="scroll-bar">
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
       @endif
     </div>
   </div>

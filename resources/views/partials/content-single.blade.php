@@ -1,6 +1,7 @@
 <article {!! post_class('h-entry') !!}>
 
   @include('partials.page-header')
+  @include('partials.entry-meta')
 
   <div class="e-content mini-container">
     {!! the_content() !!}

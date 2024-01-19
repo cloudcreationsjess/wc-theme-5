@@ -12,6 +12,11 @@
     overflow: unset;
     position: relative;
     padding-top: 40px;
+    @include b(mobile) {
+      padding-left: 25px;
+      padding-right: 25px;
+      width: 100%;
+    }
 
     .swiper-wrapper {
       display: flex;
@@ -19,11 +24,18 @@
       height: 100%;
       position: relative;
 
+
       .swiper-slide {
         width: 430px;
         align-self: stretch;
         height: unset;
         min-height: 580px;
+
+        @include b(tablet) {
+          width: 341px;
+          min-height: 370px;
+        }
+
 
         .project-card {
           @include box-shadow();
@@ -132,6 +144,16 @@
       justify-content: center;
       margin-top: 2px;
 
+      @include b(tablet) {
+        padding-left: 70px;
+        padding-right: 70px;
+      }
+
+      @include b(mobile) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
       .swiper-scrollbar {
         height: 1px;
         background-color: #CCCCC4;
@@ -140,6 +162,11 @@
         margin-right: auto;
         position: relative;
         top: 0;
+
+        @include b(tablet) {
+          width: 100%;
+        }
+
 
         .swiper-scrollbar-drag {
           height: 3px;
