@@ -6,7 +6,7 @@
   display: grid !important;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 227px;
-  gap: 16px;
+  gap: 16px !important;
   padding-left: 70px;
   padding-right: 70px;
   box-sizing: content-box;

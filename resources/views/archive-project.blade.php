@@ -9,7 +9,7 @@
   @while(have_posts())
     @php(the_post())
     @include('partials.page-header')
-    <div class="container">
+    <div class="container fade">
       @php(dynamic_sidebar('sidebar-project-header'))
     </div>
     @include('partials.project-query')

@@ -5,7 +5,7 @@
 @else
 
   <div class="{{ $block->classes }}">
-    <div class="container">
+    <div class="container fade">
       @if($block_data['title'])
         <h1>{!! $block_data['title'] !!}</h1>
       @endif

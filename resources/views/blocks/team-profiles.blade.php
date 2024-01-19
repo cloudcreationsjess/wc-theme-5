@@ -4,13 +4,13 @@
   </figure>
 @else
 
-  <div class="{{ $block->classes }}">
+  <div class="{{ $block->classes }} fade">
     <div class="container">
       @if(get_field('title'))
-        <h2 class="team-block-title">{!! get_field('title') !!}</h2>
+        <h2 class="team-block-title fade">{!! get_field('title') !!}</h2>
       @endif
       @if(get_field('subtitle'))
-        <div class="h5 team-block-subtitle">{!! get_field('subtitle') !!}</div>
+        <div class="h5 team-block-subtitle fade">{!! get_field('subtitle') !!}</div>
       @endif
       <ul class="team-members">
         @php
@@ -27,7 +27,7 @@
               $jobTitle = get_field('job_title', $teamMember->ID);
               $social = get_field('social_link', $teamMember->ID);
             @endphp
-            <li class="team-member">
+            <li class="team-member fade">
               @if($photo)
                 <div class="team-member__photo">
                   {!! the_image($photo, '', 'medium', 'medium') !!}

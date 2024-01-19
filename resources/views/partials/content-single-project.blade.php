@@ -1,20 +1,20 @@
-<article class="h-entry container">
+<article class="h-entry">
 
-  <div class="page-header">
+  <div class="page-header container">
     <h1>{!! get_the_title() !!}</h1>
     <div class="post-meta">
       @php
         $location_terms = get_the_terms(get_the_ID(), 'location');
         $date_terms = get_the_terms(get_the_ID(), 'project-date');
       @endphp
-
-      @if($location_terms)
-        <h2 class="location-term">{{ $location_terms[0]->name }}</h2>
-      @endif
-
-      @if($date_terms)
-        <h2 class="date-term">&nbsp;| {{ $date_terms[0]->name }}</h2>
-      @endif
+      <h2 class="terms">
+        @if($location_terms)
+          {{ $location_terms[0]->name }}
+        @endif
+        @if($date_terms)
+          | {{ $date_terms[0]->name }}
+        @endif
+      </h2>
     </div>
     <div class="tags">
       @php

@@ -2,10 +2,6 @@
 .single {
 
   .e-content {
-    @include b(mobile) {
-      padding-left: 24px;
-      padding-right: 24px;
-    }
 
   }
 
@@ -17,6 +13,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    @include b(mobile) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
 
     .nav-previous, .nav-next {
       display: flex;
@@ -43,17 +44,33 @@
     .nav-next {
       margin-left: auto;
 
+      @include b(mobile) {
+        margin-left: 0;
+      }
+
       svg {
         margin-left: 3px;
+
+        @include b(mobile) {
+          margin-left: 0;
+        }
       }
     }
 
     .nav-previous {
       margin-right: auto;
 
+      @include b(mobile) {
+        margin-right: 0;
+      }
+
       svg {
         transform: rotate(180deg);
         margin-right: 3px;
+
+        @include b(mobile) {
+          margin-right: 0;
+        }
       }
     }
   }

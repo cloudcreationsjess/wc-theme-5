@@ -1,4 +1,12 @@
 .single-post {
+
+  .e-content {
+    @include b(mobile) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
   .page-header {
     padding-top: 100px;
     text-align: center;
@@ -19,6 +27,14 @@
     justify-content: center;
     text-align: center;
     margin-bottom: 128px;
+
+    time {
+      margin-bottom: 0;
+    }
+
+    @include b(mobile) {
+      margin-bottom: 100px;
+    }
   }
 
   .e-content {

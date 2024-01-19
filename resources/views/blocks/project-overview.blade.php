@@ -7,7 +7,7 @@
   <div class="{{ $block->classes }} container">
     <div class="overview-container">
       @if($block_data['project_overview']['title'])
-        <h2>{!! $block_data['project_overview']['title'] !!}</h2>
+        <h3 class="">{!! $block_data['project_overview']['title'] !!}</h3>
       @endif
       @if($block_data['project_overview']['description'])
         {!! $block_data['project_overview']['description'] !!}
@@ -15,7 +15,7 @@
     </div>
     <div class="list-container">
       @if($block_data['project_details']['title'])
-        <h3>{{ $block_data['project_details']['title'] }}</h3>
+        <h3 class="fade">{{ $block_data['project_details']['title'] }}</h3>
       @endif
       @if($block_data['project_details']['list_items'])
         <ul class="check-list">

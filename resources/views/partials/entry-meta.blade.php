@@ -1,16 +1,13 @@
-<div class="entry-meta">
-  <time class="dt-published h2" datetime="{{ get_post_time('c', true) }}">
-    {{ get_post_time('m-d-y') }} |&nbsp;
-  </time>
-
+<h2 class="entry-meta container" datetime="{{ get_post_time('c', true) }}">
+  {{ get_post_time('m-d-y') }}
   @php
     $categories = get_the_category();
     $category = $categories[0];
   @endphp
-  <div class="h2 category">
-    {!! $category->name !!}
-  </div>
-</div>
+  @if($category)
+    | {!! $category->name !!}
+  @endif
+</h2>
 
 
 

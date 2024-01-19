@@ -8,10 +8,10 @@
     $is_preview = $project_data['is_preview'];
     $projects = $project_data['project'];
   @endphp
-  <div class="{{ $block->classes }}">
+  <div class="{{ $block->classes }} fade">
     <div class="container">
       @if($project_data['title'])
-        <h2 class="title">{!! $project_data['title'] !!}</h2>
+        <h2 class="title fade">{!! $project_data['title'] !!}</h2>
       @endif
     </div>
     <div class="swiper">

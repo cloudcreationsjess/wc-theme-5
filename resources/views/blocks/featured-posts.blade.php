@@ -7,12 +7,12 @@
     $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'lightest';
   @endphp
 
-  <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color @if($block_data['style_settings'] === 'logo') has-logo @endif">
+  <div class="{{ $block->classes }} fade has-{{$backgroundColorClass}}-background-color @if($block_data['style_settings'] === 'logo') has-logo @endif">
     <div class="container">
       @if ($block_data['style_settings'] === 'logo' && $block_data['logo'])
         {!! the_image($block_data['logo'], 'logo', 'medium', 'medium') !!}
       @endif
-      <h2 class="title">{{ $block_data['title'] }}</h2>
+      <h2 class="title fade">{{ $block_data['title'] }}</h2>
       @if ($block_data['featured_posts'])
         <ul class="featured-posts-container">
           @foreach ($block_data['featured_posts'] as $post)

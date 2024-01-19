@@ -1,6 +1,10 @@
 import domReady from '@roots/sage/client/dom-ready';
 import Swiper from 'swiper/bundle';
 import 'select2';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Application entrypoint
@@ -13,6 +17,7 @@ domReady(async () => {
   modalPop();
   selectChange();
   mobilePopout();
+  repeatAnimations();
 });
 
 /**
@@ -26,6 +31,10 @@ function projectsSlide() {
     freeMode: true,
     slidesPerView: 'auto',
     spaceBetween: 15,
+    // slidesPerGroup: 1,
+    // initialSlide: 1,
+    slidesOffsetBefore: 15,
+    slidesOffsetAfter: 15,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,
@@ -113,12 +122,12 @@ function accordion() {
 function modalPop() {
   // Function to show the modal
   function showModal(target) {
-    $(target).fadeIn().css('display', 'flex');
+    $(target).fadeIn('fast').css('display', 'flex');
   }
 
   // Function to hide the modal
   function hideModal(target) {
-    $(target).fadeOut();
+    $(target).fadeOut('fast');
   }
 
   // Event handler for clicking "Learn More"
@@ -144,15 +153,6 @@ function modalPop() {
     }
   });
 }
-
-// function blockAllow() {
-//   const allowedEmbedBlocks = ['vimeo', 'youtube'];
-//   wp.blocks.getBlockVariations('core/embed').forEach(function (blockVariation) {
-//     if (-1 === allowedEmbedBlocks.indexOf(blockVariation.name)) {
-//       wp.blocks.unregisterBlockVariation('core/embed', blockVariation.name);
-//     }
-//   });
-// }
 
 function selectChange() {
   $('b[role="presentation"]').hide();
@@ -274,5 +274,286 @@ function mobilePopout() {
         $(this).parent().toggleClass('is-active');
       });
     }
+  });
+}
+
+function repeatAnimations() {
+  // select all animated elements
+  const fadeRight = document.querySelectorAll('.fade-in-right');
+
+  // loop through each element and create a separate scrollTrigger for each one
+  fadeRight.forEach((fade) => {
+    gsap.from(fade, {
+      scrollTrigger: {
+        trigger: fade,
+        start: 'top 80%',
+      },
+      opacity: 0,
+      x: -20,
+      duration: 1,
+      delay: 0,
+      ease: 'Circ.easeOut',
+    });
+  });
+
+  // select all animated elements;;
+  const fadeLeft = document.querySelectorAll('.fade-in-left');
+
+  // loop through each element and create a separate scrollTrigger for each one
+  fadeLeft.forEach((fade) => {
+    gsap.from(fade, {
+      opacity: 0,
+      x: 20,
+      duration: 1,
+      delay: 0,
+      ease: 'Circ.easeOut',
+      scrollTrigger: {
+        trigger: fade,
+        start: 'top 80%',
+      },
+    });
+  });
+
+  const fade = document.querySelectorAll('.fade');
+
+  // loop through each element and create a separate scrollTrigger for each one
+  fade.forEach((fade) => {
+    gsap.from(fade, {
+      opacity: 0,
+      duration: 1,
+      stagger: 0.1,
+      delay: 0,
+      ease: 'Circ.easeOut',
+      scrollTrigger: {
+        trigger: fade,
+        start: 'top 80%',
+      },
+    });
+  });
+
+  const fadeThisUp = document.querySelectorAll('.fade-in-up');
+
+  // loop through each element and create a separate scrollTrigger for each one
+  fadeThisUp.forEach((fade) => {
+    gsap.from(fade, {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.1,
+      delay: 0,
+      ease: 'Circ.easeOut',
+      scrollTrigger: {
+        trigger: fade,
+        start: 'top 80%', // change the start position as needed
+      },
+    });
+  });
+
+  var listBlock = document.querySelector('.swiper .project-card');
+
+  if (listBlock) {
+    gsap.from('.swiper .project-card', {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'Circ.easeOut',
+      scrollTrigger: {
+        trigger: '.swiper-wrapper',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var postCards = document.querySelectorAll('.post-card');
+  var postsContainer = document.querySelector('.blog-posts-container');
+  // Staggered fade-in animation for each post card
+  if (postsContainer) {
+    postCards.forEach((postCard) => {
+      gsap.from(postCard, {
+        opacity: 0,
+        y: 10,
+        duration: 0.75,
+        ease: 'Circular.easeOut',
+        scrollTrigger: {
+          trigger: postCard,
+          start: 'top 80%',
+        },
+      });
+    });
+  }
+
+  var galleryBlock = document.querySelector('.wp-block-gallery');
+  if (galleryBlock) {
+    gsap.from('.wp-block-gallery', {
+      opacity: 0,
+      duration: 0.75,
+      ease: 'Circular.easeOut',
+      scrollTrigger: {
+        trigger: '.wp-block-gallery',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var processList = document.querySelector('.process-list');
+  if (processList) {
+    gsap.from('.process-list .process-item', {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: '.process-list',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var serviceList = document.querySelector('.service-list');
+  if (serviceList) {
+    gsap.from('.service-list .service-item', {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.2,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: '.service-list',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var featuredBlog = document.querySelector('.featured-posts-container');
+
+  if (featuredBlog) {
+    gsap.from('.featured-posts-container .post-card', {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: '.featured-posts-container',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var featuredPostsSlider = document.querySelector('.swiper-featured-posts');
+  if (featuredPostsSlider) {
+    gsap.from('.swiper-featured-posts .post-card', {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'ease',
+      scrollTrigger: {
+        trigger: '.swiper-featured-posts',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var accordion = document.querySelector('.accordion');
+
+  if (accordion) {
+    gsap.from('.accordion .accordion-item', {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'Circ.easeOut',
+      scrollTrigger: {
+        trigger: '.accordion',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var services = document.querySelector('.services-slider');
+
+  if (services) {
+    gsap.from('.services-slider .services-card', {
+      opacity: 0,
+      y: 10,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'Circ.easeOut',
+      scrollTrigger: {
+        trigger: '.services-slider',
+        start: 'top 80%',
+      },
+    });
+  }
+
+  var vertLine = document.querySelectorAll('.vertical-line');
+
+  vertLine.forEach((vertLine) => {
+    //vertLine height grow animation
+    gsap.fromTo(
+      vertLine,
+      {
+        scaleY: 0,
+        transformOrigin: 'top',
+      },
+      {
+        scaleY: 1,
+        duration: 1,
+        ease: 'Circ.easeOut',
+        scrollTrigger: {
+          trigger: vertLine,
+          start: 'top 80%',
+        },
+      },
+    );
+  });
+}
+
+var contactBlock = document.querySelector('.wp-block-contact-block');
+
+if (contactBlock) {
+  var contactBlockChildren = contactBlock.querySelectorAll('.text-content > *');
+
+  gsap.from(contactBlockChildren, {
+    opacity: 0,
+    duration: 0.75,
+    stagger: 0.1,
+    ease: 'Circ.easeOut',
+    scrollTrigger: {
+      trigger: contactBlock, // Use the actual parent container as the trigger
+      start: 'top 80%',
+    },
+  });
+}
+
+var overviewChildren = document.querySelectorAll('.overview-container > *');
+
+if (overviewChildren.length > 0) {
+  gsap.from('.overview-container > *', {
+    opacity: 0,
+    duration: 0.75,
+    stagger: 0.1,
+    ease: 'Circ.easeOut',
+    scrollTrigger: {
+      trigger: '.overview-container',
+      start: 'top 80%',
+    },
+  });
+}
+var checkListChildren = document.querySelectorAll('.check-list > *');
+
+if (checkListChildren.length > 0) {
+  gsap.from('.check-list > *', {
+    opacity: 0,
+    duration: 0.75,
+    stagger: 0.1,
+    ease: 'Circ.easeOut',
+    scrollTrigger: {
+      trigger: '.check-list',
+      start: 'top 80%',
+    },
   });
 }

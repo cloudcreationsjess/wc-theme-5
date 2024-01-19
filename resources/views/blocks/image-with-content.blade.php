@@ -8,26 +8,31 @@
     $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'lightest';
   @endphp
 
-  <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color is-style-{!! $image_block_data['style_settings'] !!}">
+  <div class="{{ $block->classes }} fade has-{{$backgroundColorClass}}-background-color is-style-{!! $image_block_data['style_settings'] !!}">
     <div class="container">
       @if($image_block_data['image'])
-        <div class="image-container">
+        <div class="image-container @php
+        $class = $block->style == "right" ? 'fade-in-left' : 'fade-in-right';
+        echo $class;
+    @endphp">
           {!! the_image($image_block_data['image'], '', 'large', 'large') !!}
+          <span class="vertical-line"></span>
         </div>
       @endif
       <div class="text-container">
+        <span class="vertical-line"></span>
         @if($image_block_data['content_items'])
           @foreach($image_block_data['content_items'] as $item)
             @switch($item['layout'])
               @case('title')
                 @if($item['title'])
-                  <h2>{!! $item['title'] !!}</h2>
+                  <h2 class="fade">{!! $item['title'] !!}</h2>
                 @endif
                 @break
 
               @case('content')
                 @if($item['content'])
-                  <div class="content">{!! $item['content'] !!}</div>
+                  <div class="content fade">{!! $item['content'] !!}</div>
                 @endif
                 @break
 
@@ -57,7 +62,9 @@
 
               @case('button')
                 @if($item['button']['button'])
+                  <span class="fade">
                   <a href="{{ $item['button']['button']['url'] }}" class="btn btn--{{ $item['button']['button_type'] }}">{{ $item['button']['button']['title'] }}</a>
+                  </span>
                 @endif
                 @break
             @endswitch

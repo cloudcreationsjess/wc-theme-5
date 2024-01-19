@@ -6,7 +6,7 @@
 
   <div class="{{ $block->classes }}">
     <div class="container">
-      <div class="cta-container">
+      <div class="cta-container fade">
         @if($block_data['title'])
           <h2 class="title">{!! $block_data['title'] !!}</h2>
         @endif

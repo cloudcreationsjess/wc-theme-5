@@ -4,6 +4,12 @@
   flex-direction: row;
   min-height: 100vh;
 
+  @include b(mobile) {
+    flex-direction: column;
+    min-height: unset;
+    height: auto;
+  }
+
   .left-container {
     width: 57%;
     min-height: 100vh;
@@ -14,6 +20,14 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
+
+    @include b(mobile) {
+      width: 100%;
+      padding: 100px 0;
+      min-height: 100%;
+      height: auto;
+    }
+
 
     .background {
       position: absolute;
@@ -52,6 +66,24 @@
       position: relative;
       z-index: 2;
 
+      @include b(laptop) {
+        margin-left: 113px;
+        margin-right: 80px;
+      }
+
+      @include b(tablet) {
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 40px;
+      }
+
+      @include b(mobile) {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
       h1, h2 {
         margin-bottom: 30px;
         color: $light;
@@ -68,7 +100,7 @@
           flex-direction: row;
           align-items: center;
           justify-content: flex-start;
-          margin-bottom: 19px;
+          margin-bottom: 14px;
 
           a {
             color: $light;
@@ -104,9 +136,33 @@
     align-items: flex-start;
     justify-content: center;
 
+    @include b(mobile) {
+      width: 100%;
+      min-height: 100%;
+      padding: 60px 0;
+    }
+
+
     .form-container {
       margin-left: 89px;
       width: 341px;
+
+      @include b(laptop) {
+        margin-right: 113px;
+        margin-left: 60px;
+      }
+
+      @include b(tablet) {
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 40px;
+        width: 100%;
+        padding-right: 70px;
+      }
+
+      @include b(mobile) {
+        padding: 0 24px;
+      }
 
       h2 {
         margin-bottom: 30px;

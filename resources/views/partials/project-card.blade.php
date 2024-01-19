@@ -1,8 +1,10 @@
 @php
   $services = get_field('services_relationship', $project['id']);
+  //check if page is archive-project
+  $pageCheck =  is_page_template('archive-project.blade.php') ? 'fade' : '';
 @endphp
 
-<a class="project-card" href="{{ $project['learn_more_url'] }}">
+<a class="project-card {{$pageCheck}}" href="{{ $project['learn_more_url'] }}">
               <span class="image-wrapper">
                 {!! the_image_by_post_id($project['id'], 'featured-image', 'medium_large', 'medium_large') !!}
                 @if($project['tags'])

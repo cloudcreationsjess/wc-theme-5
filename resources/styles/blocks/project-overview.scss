@@ -6,15 +6,45 @@
   justify-content: flex-start;
   margin-bottom: 60px;
 
+  @include b(mobile) {
+    flex-direction: column;
+  }
+
   .overview-container {
     width: 54%;
     padding-right: 54px;
+
+    p {
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    @include b(mobile) {
+      width: 100%;
+      margin-bottom: 60px;
+      padding-right: 0;
+    }
   }
 
   .list-container {
     width: 46%;
     border-left: 1px solid $darkest;
     padding: 0 50px;
+
+    @include b(tablet) {
+      padding: 0 0 0 50px;
+    }
+
+    @include b(mobile) {
+      width: 100%;
+      border-left: none;
+      padding: 0;
+    }
 
     ul {
       margin-top: 30px;

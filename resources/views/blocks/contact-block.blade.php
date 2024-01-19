@@ -94,7 +94,7 @@
       </div>
     </div>
     <div class="right-container">
-      <div class="form-container">
+      <div class="form-container fade">
         @if($block_data['contact_form']['form_title'])
           <h2>{!! $block_data['contact_form']['form_title'] !!}</h2>
           @if($block_data['contact_form']['form_shortcode'])

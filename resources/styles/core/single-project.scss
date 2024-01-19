@@ -22,6 +22,15 @@
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
+
+      .location-term {
+        white-space: nowrap;
+      }
+
+      .date-term {
+
+      }
+
     }
 
 
@@ -30,9 +39,18 @@
       top: unset;
       left: unset;
 
+      @include b(mobile) {
+        flex-wrap: wrap;
+
+      }
+
       .tag {
         border-color: $darkest;
         color: $darkest;
+
+        @include b(mobile) {
+          margin-bottom: 8px;
+        }
       }
     }
 

@@ -8,22 +8,24 @@
     $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'bright';
   @endphp
 
-  <div class="{{ $block->classes }} @if($block_data['background_type'] != 'image') has-{{ $backgroundColorClass }}-background-color @else has-image-background @endif"
+  <div class="{{ $block->classes }}  @if($block_data['background_type'] != 'image') fade has-{{ $backgroundColorClass }}-background-color @else has-image-background @endif"
     @if($block_data['background_type'] == 'image') style="background-image: url('{{ $block_data['background_image']['url'] }}')" @endif
   >
 
     <div class="mini-container">
 
       @if($block_data['title'])
-        <h2 class="pullquote">{!! $block_data['title'] !!}</h2>
+        <h2 class="fade pullquote">{!! $block_data['title'] !!}</h2>
       @endif
 
       @if($block_data['button'])
-        <a href="{{ $block_data['button']['url'] }}" target="{{ $block_data['button']['target'] }}" class="btn btn--outline-light">{!! $block_data['button']['title'] !!}</a>
+        <span class="fade">
+          <a href="{{ $block_data['button']['url'] }}" target="{{ $block_data['button']['target'] }}" class="btn btn--outline-light">{!! $block_data['button']['title'] !!}</a>
+        </span>
       @endif
 
       @if($block_data['subtext'])
-        <p class="subtext mice">{!! $block_data['subtext'] !!}</p>
+        <p class="subtext mice fade">{!! $block_data['subtext'] !!}</p>
       @endif
     </div>
 

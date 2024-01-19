@@ -3,7 +3,9 @@
 @section('content')
   @include('partials.page-header')
   <div class="container">
+    <span class="fade">
     @php(dynamic_sidebar('post-archive-header'))
+      </span>
 
     @if (have_posts())
       <ul class="blog-posts-container">

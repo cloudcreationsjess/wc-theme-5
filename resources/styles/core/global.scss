@@ -7,7 +7,8 @@ html {
   overflow: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+
 
   ::selection {
     background-color: $bright;
@@ -148,7 +149,7 @@ button.cta {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 28px;
+    padding: 6px 28px;
     max-height: 35px;
     color: $lightest;
     @include font-size(14);
@@ -156,6 +157,7 @@ button.cta {
     border: 1px solid $lightest;
     background-color: #FFFFFF26;
     margin-right: 10px;
+    text-align: center;
   }
 }
 
@@ -165,6 +167,10 @@ button.cta {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.vertical-line {
+
 }
 
 

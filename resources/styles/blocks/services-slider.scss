@@ -2,8 +2,6 @@
   width: 100%;
   background-color: $lightest;
   padding: 120px 0 60px 0;
-  position: relative;
-  z-index: 1;
 
   @include b(mobile) {
     padding: 100px 0 60px 0;

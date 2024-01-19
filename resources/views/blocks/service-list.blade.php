@@ -8,7 +8,7 @@
     <div class="container">
 
       @if($block_data['title'])
-        <h2 class="title">{!! $block_data['title'] !!}</h2>
+        <h2 class="title fade">{!! $block_data['title'] !!}</h2>
       @endif
       @if($block_data['services'])
         <ul class="service-list">

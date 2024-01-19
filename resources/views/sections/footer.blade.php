@@ -59,7 +59,7 @@
       </div>
 
       <div class="copyright">
-        <span class="copyright-text"> Copyright {{ date('Y') }} <a href="https://whitecanvasdesign.ca/">White Canvas Design Inc.</a></span>
+        <span class="copyright-text"> Copyright {{ date('Y') }} <a href="https://whitecanvasdesign.ca/" target="_blank">White Canvas Design Inc.</a></span>
 
         <span class="h-divide">|</span>
 

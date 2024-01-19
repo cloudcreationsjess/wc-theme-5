@@ -45,19 +45,20 @@
       box-sizing: content-box;
 
       @include b(tablet) {
-        padding-bottom: 165px;
+        padding-bottom: 185px;
       }
 
 
-      &:after {
-        content: '';
+      .vertical-line {
         position: absolute;
         bottom: -360px;
         left: 0;
         width: 1.2px;
+        max-height: 435px;
         height: 435px;
         background-color: $darkest;
         z-index: 3;
+
       }
 
 
@@ -93,7 +94,7 @@
           margin-bottom: 70px;
         }
 
-        &:after {
+        .vertical-line {
           bottom: -340px;
         }
       }

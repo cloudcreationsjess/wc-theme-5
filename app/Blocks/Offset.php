@@ -154,7 +154,7 @@
                 'title'      => get_field('title'),
                 'layout'     => get_field('layout'),
                 'content'    => [],
-                'logo'       => get_field('logo'),
+                'logo'       => get_field('spinning_logo'),
                 'is_preview' => get_field('is_preview'),
                 'button'     => get_field('button'),
             ];
@@ -190,8 +190,8 @@
                         'two' => 'Two Column Text',
                     ],
                 ])
-                ->addImage('logo', [
-                    'label'             => 'Logo',
+                ->addGroup('spinning_logo', [
+                    'label'             => 'Spinning Logo',
                     'conditional_logic' => [
                         [
                             'field'    => 'layout',
@@ -200,6 +200,27 @@
                         ],
                     ],
                 ])
+                ->addImage('spinning_logo', [
+                    'label'             => 'Spinning Logo',
+                    'conditional_logic' => [
+                        [
+                            'field'    => 'layout',
+                            'operator' => '==',
+                            'value'    => 'one',
+                        ],
+                    ],
+                ])
+                ->addImage('stationary_logo', [
+                    'label'             => 'Stationary Logo',
+                    'conditional_logic' => [
+                        [
+                            'field'    => 'layout',
+                            'operator' => '==',
+                            'value'    => 'one',
+                        ],
+                    ],
+                ])
+                ->endGroup()
                 ->addWysiwyg('one_column_text', [
                     'label'             => 'Column',
                     'media_upload'      => 0,

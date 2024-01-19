@@ -4,9 +4,9 @@
   </figure>
 @else
 
-  <div class="{{ $block->classes }}">
+  <div class="{{ $block->classes }} fade">
     <div class="container">
-      <div class="left-column">
+      <div class="left-column fade">
         @if($block_data['title'])
           <h2>{{ $block_data['title'] }}</h2>
         @endif

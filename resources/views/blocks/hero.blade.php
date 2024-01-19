@@ -8,11 +8,12 @@
     <div class="container">
       <div class="hero-content">
         @if($hero_data['title'])
-          <h1>{{ $hero_data['title'] }}</h1>
+          <h1 class="fade">{{ $hero_data['title'] }}</h1>
         @endif
         @if($hero_data['subheading'])
-          <h2>{{ $hero_data['subheading'] }}</h2>
+          <h2 class="fade">{{ $hero_data['subheading'] }}</h2>
         @endif
+        <span class="vertical-line"></span>
       </div>
     </div>
   </div>

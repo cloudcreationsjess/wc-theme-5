@@ -7,8 +7,8 @@
   @php
     $backgroundColorClass = $block->instance->attributes['backgroundColor'] ?? 'bright';
   @endphp
-  <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color">
-    <div class="mini-container">
+  <div class="{{ $block->classes }} has-{{$backgroundColorClass}}-background-color fade">
+    <div class="mini-container fade">
       @if($mini_cta['title'])
         <h3 class="text">
           {{$mini_cta['title']}}

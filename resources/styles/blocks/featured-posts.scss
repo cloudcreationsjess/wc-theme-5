@@ -80,27 +80,28 @@
         align-items: center;
         justify-content: center;
         margin-top: 2px;
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 70px;
+        max-width: 100vw;
+        width: 100vw;
+
+        @include b(tablet) {
+          padding-left: 70px;
+          padding-right: 70px;
+        }
 
         @include b(mobile) {
-          padding-left: 25px;
-          padding-right: 25px;
+          padding-left: 24px;
+          padding-right: 24px;
         }
 
         .swiper-scrollbar {
           height: 1px;
           background-color: #CCCCC4;
-          position: relative;
-          top: 0;
+          max-width: 875px;
           width: 100%;
           margin-left: auto;
           margin-right: auto;
+          position: relative;
 
-          @include b(mobile) {
-            width: calc(100vw - 50px);
-          }
 
           .swiper-scrollbar-drag {
             height: 3px;
@@ -109,6 +110,43 @@
           }
         }
       }
+
+      //.scroll-bar {
+      //  height: 80px;
+      //  display: flex;
+      //  flex-direction: column;
+      //  align-items: center;
+      //  justify-content: center;
+      //  margin-top: 2px;
+      //  width: 100%;
+      //  padding-left: 70px;
+      //  padding-right: 70px;
+      //
+      //  @include b(mobile) {
+      //    padding-left: 25px;
+      //    padding-right: 25px;
+      //  }
+      //
+      //  .swiper-scrollbar {
+      //    height: 1px;
+      //    background-color: #CCCCC4;
+      //    position: relative;
+      //    top: 0;
+      //    width: 100%;
+      //    margin-left: auto;
+      //    margin-right: auto;
+      //
+      //    @include b(mobile) {
+      //      width: calc(100vw - 50px);
+      //    }
+      //
+      //    .swiper-scrollbar-drag {
+      //      height: 3px;
+      //      background-color: $bright;
+      //      top: -1px;
+      //    }
+      //  }
+      //}
     }
   }
 }

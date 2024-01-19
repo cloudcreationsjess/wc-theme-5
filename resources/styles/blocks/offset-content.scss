@@ -24,10 +24,14 @@
     .logo {
       position: absolute;
       right: 0;
-      bottom: -17px;
+      bottom: -40px;
       width: 262px;
       height: 262px;
       z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
       @include b(laptop) {
         right: 80px;
@@ -35,13 +39,12 @@
 
       @include b(tablet) {
         right: 0;
-        transform: translateX(10%);
+        transform: translateX(24%);
       }
 
       @media (max-width: 901px) {
         position: relative;
         width: 100%;
-        transform: none;
 
       }
 
@@ -51,11 +54,25 @@
         object-fit: contain;
 
         @media (max-width: 901px) {
-
           position: absolute;
           right: 0;
-          transform: translateX(31%);
           width: auto;
+
+        }
+
+        &.spinning-logo {
+          animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        &.stationary-logo {
+          position: absolute;
+          top: 0;
 
         }
       }
@@ -65,12 +82,14 @@
       max-width: 608px;
     }
 
-    .btn {
+    .offset-button {
       align-self: flex-start;
+      display: block;
 
       @include b(mobile) {
         width: 100%;
         max-width: 319px;
+        margin-bottom: 30px;
       }
     }
 
@@ -91,7 +110,9 @@
             margin-bottom: 0;
           }
         }
+
       }
+
 
       .content-two {
         max-width: 875px;
