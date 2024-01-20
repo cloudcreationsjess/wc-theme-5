@@ -1,17 +1,16 @@
-@import 'node_modules/swiper/swiper.scss';
-@import 'node_modules/swiper/modules/scrollbar.scss';
-@import 'node_modules/select2/src/scss/core.scss';
-
 // MAIN THEME FILES ===================================\
-
-@import "core/variables.scss";
-@import "core/mixins.scss";
-@import "core/global.scss";
 @import "core/resets.scss";
+@import "core/mixins.scss";
+@import "core/variables.scss";
 @import "core/typography.scss";
+@import "core/global.scss";
 @import "core/single.scss";
 @import "core/single-project.scss";
 @import "core/single-post.scss";
+
+@import 'node_modules/swiper/swiper.scss';
+@import 'node_modules/swiper/modules/scrollbar.scss';
+@import 'node_modules/select2/src/scss/core.scss';
 
 // COMPONENTS ===================================\
 

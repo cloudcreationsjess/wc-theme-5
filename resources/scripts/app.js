@@ -43,6 +43,8 @@ function projectsSlide() {
       0: {
         slidesPerView: 1,
         spaceBetween: 25,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
       },
       768: {
         slidesPerView: 'auto',
