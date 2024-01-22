@@ -25,6 +25,7 @@
     flex-direction: column;
     grid-template-columns: unset;
     grid-auto-rows: unset;
+    gap: 10px !important;
   }
 
 
@@ -51,4 +52,8 @@
 
 .wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image) {
   width: unset;
+
+  @include b(mobile) {
+    width: 100%;
+  }
 }

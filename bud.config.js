@@ -43,7 +43,7 @@ export default async (app) => {
   app
     .setUrl('http://localhost:3000')
     .setProxyUrl('http://white-canvas-theme-5.local')
-    .watch(['resources/views', 'resources/styles', 'app']);
+    .watch(['resources/views', 'app']);
 
   /**
    * Generate WordPress `theme.json`

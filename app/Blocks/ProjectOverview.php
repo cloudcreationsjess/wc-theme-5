@@ -197,10 +197,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'project-overview',
-                get_template_directory_uri() . '/resources/styles/blocks/project-overview.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

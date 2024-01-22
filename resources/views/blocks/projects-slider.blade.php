@@ -8,7 +8,7 @@
     $is_preview = $project_data['is_preview'];
     $projects = $project_data['project'];
   @endphp
-  <div class="{{ $block->classes }} fade">
+  <div class="{{ $block->classes }}">
     <div class="container">
       @if($project_data['title'])
         <h2 class="title fade">{!! $project_data['title'] !!}</h2>

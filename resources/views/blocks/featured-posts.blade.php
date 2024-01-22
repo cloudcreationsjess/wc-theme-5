@@ -22,9 +22,9 @@
         <div class="swiper-featured-posts">
           <div class="swiper-wrapper">
             @foreach ($block_data['featured_posts'] as $post)
-              <div class="swiper-slide">
+              <ul class="swiper-slide">
                 @include('partials.blog-card')
-              </div>
+              </ul>
             @endforeach
           </div>
           <div class="scroll-bar">

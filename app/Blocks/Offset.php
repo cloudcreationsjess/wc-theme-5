@@ -274,10 +274,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'example-block',
-                get_template_directory_uri() . '/resources/styles/blocks/offset-content.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

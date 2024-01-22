@@ -163,10 +163,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'text-hero',
-                get_template_directory_uri() . '/resources/styles/blocks/text-hero.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

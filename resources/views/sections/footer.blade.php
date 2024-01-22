@@ -11,7 +11,7 @@
     <div class="footer-left">
       <a href="{{ home_url('/') }}" class="footer-logo">
         @isset($footerLogo)
-          {!! the_image($footerLogo, 'logo', 'thumbnail', 'thumbnail') !!}
+          {!! the_image($footerLogo, 'logo', 'thumbnail', 'thumbnail', 'White Canvas Design Logo') !!}
         @endisset
       </a>
       <div class="footer-contact-info">
@@ -31,7 +31,7 @@
           @isset($socialLinks)
             @foreach ($socialLinks as $socialLink)
               @isset($socialLink['social_link'])
-                <a href="{{ $socialLink['social_link'] }}" target="_blank" class="footer-social-link">
+                <a href="{{ $socialLink['social_link'] }}" target="_blank" class="footer-social-link" title="Visit our {{ $socialLink['social_link'] }} profile">
                   @isset($socialLink['social_icon'])
                     {!! the_image($socialLink['social_icon'], 'icon', 'thumbnail', 'thumbnail') !!}
                   @endisset

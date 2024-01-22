@@ -174,9 +174,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'hero-block',
-                get_template_directory_uri() . '/resources/styles/blocks/hero.scss'
-            );
+
         }
     }

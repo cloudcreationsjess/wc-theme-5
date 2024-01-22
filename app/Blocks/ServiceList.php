@@ -198,10 +198,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'service-list',
-                get_template_directory_uri() . '/resources/styles/blocks/service-list.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

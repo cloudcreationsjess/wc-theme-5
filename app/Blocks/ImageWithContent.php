@@ -252,10 +252,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'image-content',
-                get_template_directory_uri() . '/resources/styles/blocks/image-with-content.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

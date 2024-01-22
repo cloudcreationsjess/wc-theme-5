@@ -200,10 +200,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'featured-posts',
-                get_template_directory_uri() . '/resources/styles/blocks/featured-posts.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

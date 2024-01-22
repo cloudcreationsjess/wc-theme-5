@@ -209,10 +209,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'contact-block',
-                get_template_directory_uri() . '/resources/styles/blocks/contact-block.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

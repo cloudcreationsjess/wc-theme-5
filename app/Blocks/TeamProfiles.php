@@ -165,10 +165,6 @@
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_style(
-                'team-profiles',
-                get_template_directory_uri() . '/resources/styles/blocks/team-profiles.scss', // Adjust the path to your compiled CSS file
 
-            );
         }
     }

@@ -40,13 +40,13 @@
                 <div class="accordion" role="tablist">
                   @if($item['accordion_items'])
                     @foreach($item['accordion_items'] as $index => $accordion_item)
-                      <div class="accordion-item">
+                      <div class="accordion-item" role="tab">
                         @if($accordion_item['accordion_title'])
-                          <button id="heading{{ $index }}" class="accordion-header" role="tab" aria-controls="panel{{ $index }}" aria-expanded="false">
+                          <button id="heading{{ $index }}" class="accordion-header" aria-controls="panel{{ $index }}" aria-expanded="false">
                             {{ $accordion_item['accordion_title'] }}
                             <span class="plus-svg">
-                            <x-plus/>
-                              </span>
+                              <x-plus/>
+                             </span>
                           </button>
                         @endif
                         @if($accordion_item['accordion_content'])
@@ -58,6 +58,7 @@
                     @endforeach
                   @endif
                 </div>
+
                 @break
 
               @case('button')
