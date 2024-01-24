@@ -1,6 +1,10 @@
-@if($image_block_data['is_preview'])
+@if($image_block_data['is_preview'] && $block->style == "right")
   <figure>
     <img src="{{ get_stylesheet_directory_uri() }}/resources/views/blocks/previews/image-with-content.png" alt="Preview Image" style="width:100%; height:auto;">
+  </figure>
+@elseif($image_block_data['is_preview'] && $block->style == "left")
+  <figure>
+    <img src="{{ get_stylesheet_directory_uri() }}/resources/views/blocks/previews/image-with-content-left.png" alt="Preview Image" style="width:100%; height:auto;">
   </figure>
 @else
 

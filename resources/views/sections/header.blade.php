@@ -11,7 +11,7 @@
       <a class="header__site-branding header__left" href="{{ esc_url(home_url('/')) }}"
         title="{{ esc_attr(get_bloginfo('name', 'display')) }}" rel="home"
         tabindex="0" aria-label="Home">
-        {!! the_image($logo, '', 'medium', 'medium_large') !!}
+        {!! the_image($logo, 'logo', 'medium', 'medium_large') !!}
       </a>
     @endif
 

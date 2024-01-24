@@ -74,19 +74,22 @@
               "fontFamily": "Inter",
               "fontWeight": "400",
               "fontStyle": "normal",
-              "src": "url('../../fonts/Inter-Regular.ttf') format('truetype')"
+              "src": "url('../../fonts/Inter-Regular.ttf') format('truetype')",
+              "fontDisplay": "swap"
             },
             {
               "fontFamily": "Inter",
               "fontWeight": "600",
               "fontStyle": "normal",
-              "src": "url('../../fonts/Inter-SemiBold.ttf') format('truetype')"
+              "src": "url('../../fonts/Inter-SemiBold.ttf') format('truetype')",
+              "fontDisplay": "swap"
             },
             {
               "fontFamily": "Inter",
               "fontWeight": "500",
               "fontStyle": "normal",
-              "src": "url('../../fonts/Inter-Medium.ttf') format('truetype')"
+              "src": "url('../../fonts/Inter-Medium.ttf') format('truetype')",
+              "fontDisplay": "swap"
             }
           ]
         },
@@ -99,13 +102,15 @@
               "fontFamily": "Inter Tight",
               "fontWeight": "400",
               "fontStyle": "normal",
-              "src": "url('../../fonts/InterTight-Regular.ttf') format('truetype')"
+              "src": "url('../../fonts/InterTight-Regular.ttf') format('truetype')",
+              "fontDisplay": "swap"
             },
             {
               "fontFamily": "Inter Tight",
               "fontWeight": "600",
               "fontStyle": "normal",
-              "src": "url('../../fonts/Inter-SemiBold.ttf') format('truetype')"
+              "src": "url('../../fonts/Inter-SemiBold.ttf') format('truetype')",
+              "fontDisplay": "swap"
             }
           ]
         }

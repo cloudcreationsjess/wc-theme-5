@@ -77,5 +77,4 @@
             }
         });
 
-
-
+    acf_update_setting('enqueue_select2', false);

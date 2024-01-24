@@ -1,6 +1,6 @@
 @import 'node_modules/swiper/swiper.scss';
 @import 'node_modules/swiper/modules/scrollbar.scss';
-@import 'node_modules/select2/src/scss/core.scss';
+//@import 'node_modules/select2/src/scss/core.scss';
 
 // MAIN THEME FILES ===================================\
 
@@ -15,7 +15,7 @@
 
 @import "components/buttons.scss";
 @import "components/project-card.scss";
-@import "components/filter.scss";
+//@import "components/filter.scss";
 
 // BLOCKS ===================================\
 @import "blocks/example.scss";
@@ -46,14 +46,24 @@
 @import "pages/archive-posts.scss";
 
 
+.editor-styles-wrapper {
+  .wp-block-post-content {
+    padding-left: 24px;
+    padding-right: 24px;
+    overflow: hidden;
+  }
+}
+
 .post-type-post {
 
   .editor-styles-wrapper {
-    max-width: 1053px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+
+    .wp-block-post-content {
+      max-width: 1053px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
 
     h1 {
       text-align: center;

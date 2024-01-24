@@ -145,7 +145,10 @@
          */
         public function heroData() {
             return [
-                'background_image' => get_field('background_image'),
+                'background_image' => [
+                    'desktop' => get_field('background_image')['desktop_background_image'],
+                    'mobile'  => get_field('background_image')['mobile_background_image'],
+                ],
                 'title'            => get_field('title'),
                 'subheading'       => get_field('subheading'),
                 'is_preview'       => get_field('is_preview'),
@@ -161,7 +164,10 @@
             $hero = new FieldsBuilder('hero');
 
             $hero
-                ->addImage('background_image', ['label' => 'Background Image'])
+                ->addGroup('background_image', ['label' => 'Background Image'])
+                ->addImage('desktop_background_image', ['label' => 'Desktop'])
+                ->addImage('mobile_background_image', ['label' => 'Mobile'])
+                ->endGroup()
                 ->addText('title', ['label' => 'Title'])
                 ->addTextarea('subheading', ['label' => 'Subheading']);
 

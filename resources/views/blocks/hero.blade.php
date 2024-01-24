@@ -4,7 +4,7 @@
   </figure>
 @else
 
-  <div class="{{ $block->classes }}" @if($hero_data['background_image'])style="background-image: url('{!! $hero_data['background_image']['url'] !!}')" @endif>
+  <div class="{{ $block->classes }}" @if($hero_data['background_image'])style="background-image: url('{!! $hero_data['background_image']['desktop']['url'] !!}'); background-image: -webkit-image-set(url('{!! $hero_data['background_image']['desktop']['url'] !!}') 1x, url('{!! $hero_data['background_image']['mobile']['url'] !!}') 2x)" @endif>
     <div class="container">
       <div class="hero-content">
         @if($hero_data['title'])

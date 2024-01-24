@@ -53,7 +53,7 @@ $link-color: #283329;
   src: url('../../fonts/InterTight-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -61,7 +61,7 @@ $link-color: #283329;
   src: url('../../fonts/InterTight-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 
@@ -71,7 +71,7 @@ $link-color: #283329;
   src: url('../../fonts/Inter-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 /* Semi-Bold */
@@ -80,7 +80,7 @@ $link-color: #283329;
   src: url('../../fonts/Inter-SemiBold.ttf') format('truetype');
   font-weight: 600; /* Adjust the weight value accordingly */
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 /* Medium */
@@ -89,7 +89,7 @@ $link-color: #283329;
   src: url('../../fonts/Inter-Medium.ttf') format('truetype');
   font-weight: 500; /* Adjust the weight value accordingly */
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 
